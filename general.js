@@ -27,7 +27,7 @@ dispatcher.staticDirectory('/Static','/TheLyon/TheLyon/staticFiles');
 dispatcher.GetRequest('/',function(req,res){
     test=new Date(calcTime(-4));
     testB=new Date();
-    testB=testB.setDate(test.getDate()+1)
+    testB=testB..setTime(testB.getTime() +  (1 * 24 * 60 * 60 * 1000));
     console.log(testB)
     schoolDay.findOne( {"date": {"$gte": test,"$lte":testB}},function(error,result){
         if(result){
