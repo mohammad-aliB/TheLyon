@@ -25,9 +25,9 @@ mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(e
 });
 dispatcher.staticDirectory('/Static','/TheLyon/TheLyon/staticFiles');
 dispatcher.GetRequest('/',function(req,res){
-    test=calcTime(-4);
+    test=calcTime(-4).toISOString().split('T')[0];
 
-    schoolDay.findOne( {"date": {"$gte": test.toISOString().split('T')[0]}},function(error,result){
+    schoolDay.findOne( {"date": {"$gte": test}},function(error,result){
         if(result){
     res.end(dots.index({"currentDate":test,"day":result["day"]})); 
         }
