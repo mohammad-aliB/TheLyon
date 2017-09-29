@@ -21,8 +21,8 @@ mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(e
     // ArticleDatabase=db.collection("Article_Store")
     // TagDatabase=db.collection("Tag_Store")
     // SearchDatabase=db.collection("Search_Store")
-    calendar=db.collection("calendar_store")
-    schoolDay=db.collection("schoolDay_store")
+    calendar=db.collection("calendar")
+    schoolDay=db.collection("schoolDay")
 });
                                  //   var document = {"a":"b"};//include exiration later
                                   schoolDay.insert(document, function(err, records) {
