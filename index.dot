@@ -189,7 +189,7 @@ body,html{
             <li class="event"><a href="#">get memes</a></li>
             <li class="event"><a href="#">sell memes</a></li>
             <li class="event"><a href="#">late start</a></li>
-            <li class="date">sept 29</li>
+            <li class="date">{{this.date||''}}</li>
             <li class="event"><a href="#">P.a day</a></li>
         </ul>
         <a href="#" id="view-calander">View calander</a>
