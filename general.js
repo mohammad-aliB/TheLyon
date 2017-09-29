@@ -25,7 +25,8 @@ mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(e
 });
 dispatcher.GetRequest('/',function(req,res){
     test=calcTime("asdf",2);
-    res.end(dots.index({currentDate:new Date()}));
+    console.log(test)
+    res.end(dots.index({currentDate:"as"}));
 schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},function(err, result) {});
     
 });
