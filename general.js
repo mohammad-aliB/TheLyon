@@ -25,9 +25,14 @@ mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(e
 });
 dispatcher.staticDirectory('/Static','/TheLyon/TheLyon/staticFiles');
 dispatcher.GetRequest('/',function(req,res){
-    test=calcTime("me toronto",-4);
+    test=calcTime(-4);
+
+    db.posts.findOne( {"date": {"$gte": test.toISOString().split('T')[0]}},function(error,result){
+        if(result){
+    res.end(dots.index({"currentDate":test,"day":result["day"]})); 
+        }
+    });
     //console.log(test)
-    res.end(dots.index({"currentDate":test,"meme":"asdf"}));
 schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},function(err, result) {});
     
 });
@@ -35,7 +40,7 @@ schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},f
                            //       aschoolDay.insert(document, function(err, records) {
                             //            if (err) throw err;             
                             //            });
-function calcTime(city, offset) {
+function calcTime( offset) {
 
     // create Date object for current location
     var d = new Date();
@@ -50,5 +55,5 @@ function calcTime(city, offset) {
     var nd = new Date(utc + (3600000*offset));
 
     // return time as a string
-    return "The local time in " + city + " is " + nd.toLocaleString();
+    return nd.toLocaleString();
 }

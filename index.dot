@@ -19,7 +19,9 @@ body,html{
     padding:0;
 }
 #logo{
-    height:200px;
+    height: 200px;
+    width: 960px;
+    margin: 0 auto;
 }
     #navbar{
         width:100%;
@@ -181,7 +183,7 @@ body,html{
   <div id="calendar">
     <div id="day">
         <div id="day-text">today is a day</div>
-        <div id="day-number">2</div>
+        <div id="day-number">{{=it.day||'N/A'}}</div>
     </div>
     <div id="schedule">
         <ul>
