@@ -25,7 +25,7 @@ mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(e
 });
 dispatcher.staticDirectory('/Static','/TheLyon/TheLyon/staticFiles');
 dispatcher.GetRequest('/',function(req,res){
-    test=calcTime(-4).toISOString().split('T')[0];
+    test=calcTime(-4);
 
     schoolDay.findOne( {"date": {"$gte": test}},function(error,result){
         if(result){
@@ -55,5 +55,5 @@ function calcTime( offset) {
     var nd = new Date(utc + (3600000*offset));
 
     // return time as a string
-    return nd.toLocaleString();
+    return nd.toISOString().split('T')[0];
 }
