@@ -22,13 +22,13 @@ mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(e
     // TagDatabase=db.collection("Tag_Store")
     // SearchDatabase=db.collection("Search_Store")
     calendar=db.collection("calendar")
-    aschoolDay=db.collection("schoolDay")
+    schoolDay=db.collection("schoolDay")
 });
                                  //   var document = {"a":"b"};//include exiration later
-                                  aschoolDay.insert(document, function(err, records) {
-                                        if (err) throw err;             
-                                        });
-//schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},function(err, result) {});
+                           //       aschoolDay.insert(document, function(err, records) {
+                            //            if (err) throw err;             
+                            //            });
+schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},function(err, result) {});
 function calcTime(city, offset) {
 
     // create Date object for current location
