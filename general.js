@@ -23,7 +23,7 @@ mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(e
     schoolDay=db.collection("schoolDay")
    // console.log("hiiiiii")
 });
-dispatcher.staticDirectory('/Static','/TheLyon/TheLyon/staticFiles');
+dispatcher.staticDirectory('/Static/*','/TheLyon/TheLyon/staticFiles');
 dispatcher.GetRequest('/',function(req,res){
     test=calcTime("me toronto",-4);
     //console.log(test)
