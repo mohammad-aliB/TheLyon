@@ -26,7 +26,7 @@ mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(e
 dispatcher.staticDirectory('/Static','/TheLyon/TheLyon/staticFiles');
 dispatcher.GetRequest('/',function(req,res){
     test=new Date(calcTime(-4));
-    //console.log(test)
+    console.log(new Date(test.getDate()+1))
     schoolDay.findOne( {"date": {"$gte": test,"$lte":new Date(test.getDate()+1)}},function(error,result){
         if(result){
     res.end(dots.index({"currentDate":test,"day":result["day"]})); 
