@@ -27,7 +27,7 @@ dispatcher.staticDirectory('/Static','/TheLyon/TheLyon/staticFiles');
 dispatcher.GetRequest('/',function(req,res){
     test=calcTime(-4);
 
-    db.posts.findOne( {"date": {"$gte": test.toISOString().split('T')[0]}},function(error,result){
+    schoolDay.findOne( {"date": {"$gte": test.toISOString().split('T')[0]}},function(error,result){
         if(result){
     res.end(dots.index({"currentDate":test,"day":result["day"]})); 
         }
