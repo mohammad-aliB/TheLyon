@@ -2,9 +2,7 @@ var dispatcher=require("/me/Dispatcher/index.js") ;
 var dot = require('dot');
 var dots = dot.process({path: "/TheLyon/TheLyon/"});
 dispatcher.setUP(80,'0.0.0.0');
-dispatcher.GetRequest('/',function(req,res){
-    res.end(dots.index({"date":calcTime("asdf",2)}));
-});
+
 var mongodb = require('mongodb');
 mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(err, db) {
     if(err) throw err;
@@ -23,13 +21,17 @@ mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(e
     // SearchDatabase=db.collection("Search_Store")
     calendar=db.collection("calendar")
     schoolDay=db.collection("schoolDay")
-    console.log("hiiiiii")
+   // console.log("hiiiiii")
+});
+dispatcher.GetRequest('/',function(req,res){
+    res.end(dots.index({"date":calcTime("asdf",2)}));
+schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},function(err, result) {});
+    
 });
                                  //   var document = {"a":"b"};//include exiration later
                            //       aschoolDay.insert(document, function(err, records) {
                             //            if (err) throw err;             
                             //            });
-schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},function(err, result) {});
 function calcTime(city, offset) {
 
     // create Date object for current location
