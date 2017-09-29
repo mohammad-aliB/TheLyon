@@ -24,7 +24,7 @@ mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(e
     calendar=db.collection("calendar_store")
     schoolDay=db.collection("schoolDay_store")
 });
-schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},function(err, result) {});
+schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},function(err, result) {});
 function calcTime(city, offset) {
 
     // create Date object for current location
