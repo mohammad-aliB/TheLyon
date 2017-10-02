@@ -1,6 +1,7 @@
 var dispatcher=require("/TheLyon/Dispatcher/index.js") ;
 var dot = require('dot');
 var dots = dot.process({path: "/TheLyon/TheLyon/"});
+var httpModule=require('http');
 dispatcher.setUP(80,'0.0.0.0');
 
 var mongodb = require('mongodb');
@@ -59,9 +60,9 @@ function calcTime( offset) {
     return nd.toISOString().split('T')[0];
 }
 function scrapeSchoolDays(){
-    var url = 'http://graph.facebook.com/517267866/?fields=picture';
+    var url = 'https://clients6.google.com/calendar/v3/calendars/wlmacci@gmail.com/events?calendarId=wlmacci%40gmail.com&singleEvents=true&timeZone=America%2FToronto&maxAttendees=1&maxResults=1000&sanitizeHtml=true&timeMin=2017-08-27T00%3A00%3A00-04%3A00&timeMax=2018-12-10T00%3A00%3A00-04%3A00&key=AIzaSyBNlYH01_9Hc5S1J9vuFmu2nUqBZJNAXxs';
 
-    http.get(url, function(res){
+    httpModule.get(url, function(res){
         var body = '';
 
         res.on('data', function(chunk){
