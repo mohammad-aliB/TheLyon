@@ -230,7 +230,7 @@ body,html{
   <script src="js/scripts.js"></script>
   <div id="logo"><img src="/Static/logo.jpeg"></div>
   <div id="navbar">
-      <ul id="navbar-ul">
+      <ul id="navbar-ul" class="navbar-ul">
         <li><a href="#">send</a></li>
         <li><a href="#">memes</a></li>
         <li><a href="#">NEWS</a></li>
