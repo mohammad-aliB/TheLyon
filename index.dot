@@ -56,22 +56,33 @@ body,html{
     /*background-color: #e0e0e0;*/
     }
     #navbar-mobile{
-        font-size:15px;
+        font-size: 150%;
+        width: 10px;
         display:none;
-        margin: 0 auto;
+        margin:  auto;   
+        width: 100%;
+        height: 100%;
+
     }
     @media screen and (max-width: 600px) {
         #navbar ul{
             display:block;
+            position:fixed;
             width:100%;
             top:-100%;
+            background-color: white;
         }
         #navbar ul li{
             width:100%;
             height:10%;
         }
-        #navbar .open{
+        #navbar-ul .open{
             top:0;
+        }
+        #navbar-mobile{
+    /* display: none; */
+    display: block;
+
         }
       /*.topnav a {display: none;}
       .topnav a.icon {
@@ -208,7 +219,7 @@ body,html{
   <script src="js/scripts.js"></script>
   <div id="logo"><img src="/Static/logo.jpeg"></div>
   <div id="navbar">
-      <ul>
+      <ul id="navbar-ul">
         <li><a href="#">send</a></li>
         <li><a href="#">memes</a></li>
         <li><a href="#">NEWS</a></li>
@@ -258,6 +269,15 @@ body,html{
                 <div class="body">hello world</div>
         </li>
     </ul>
-
+<script>
+function mobileNavDropDown() {
+    var x = document.getElementById("navbar-ul");
+    if (x.className === "navbar-ul") {
+        x.className += " open";
+    } else {
+        x.className = "navbar-ul";
+    }
+}
+</script>
 </body>
 </html>
