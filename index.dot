@@ -241,7 +241,7 @@ body,html{
         }
 
         #navbar-ul.open{
-            top:35px;
+            top:0;
         }
        #navbar-mobile{
             /*top:0;*/
