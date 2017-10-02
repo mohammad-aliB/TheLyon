@@ -148,7 +148,7 @@ body,html{
     background-color: grey;
     }
     #articles{
-    width: 960px;
+    max-width: 960px;
     margin: 100px auto 0 auto;
     /* padding-top: 900px; */
     /*background-color: black;*/
@@ -180,7 +180,7 @@ body,html{
     #articles .author{
         display:inline;
     }
-        @media screen and (max-width: 600px) {
+        @media all and (max-width: 600px) {
             #calendar{
                 height:400px;
                 width:100%;
