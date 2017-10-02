@@ -79,9 +79,10 @@ body,html{
             height:10%;
         }
         #navbar-ul.open{
-            top:0;
+            top:10%;
         }
         #navbar-mobile{
+            top:0;
     /* display: none; */
     display: block;
 
@@ -276,8 +277,11 @@ function mobileNavDropDown() {
     var x = document.getElementById("navbar-ul");
     if (x.className === "navbar-ul") {
         x.className += " open";
+        document.getElementById("navbar-mobile").innerHTML="X";
     } else {
         x.className = "navbar-ul";
+        document.getElementById("navbar-mobile").innerHTML="&#9776;";
+
     }
 }
 </script>
