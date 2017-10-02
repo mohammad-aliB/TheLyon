@@ -193,6 +193,7 @@ body,html{
                 float:none;
                 width:100%;
                 position: relative;
+                z-index:-1;
             }
         #navbar ul{
             display:block;
