@@ -57,7 +57,7 @@ dispatcher.GetRequest('/Logout',function(req,res){
 });
 dispatcher.GetRequest('/Admin',function(req,res){
     if(sessionToken==0){
-        res.end("pls login");
+        res.end("pls <a href=\"/Login\">LOGIN</a>");
     }else{
         var cookies = cookie.parse(req.headers.cookie || '');
         if(cookies.sessionToken==sessionToken){

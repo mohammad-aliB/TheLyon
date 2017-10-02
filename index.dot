@@ -289,7 +289,7 @@ body,html{
         <li><a href="#"><span>NEWS</span></a></li>
         <li><a href="#"><span>sports</span></a></li>
         <li><a href="#"><span>staff</span></a></li>
-        <li><a href="#"><span>contact</span></a></li>
+        <li><a href="/Admin"><span>Admin</span></a></li>
       </ul>
       <a href="#" id="navbar-mobile" onclick="mobileNavDropDown()">&#9776;</a>
   </div>
