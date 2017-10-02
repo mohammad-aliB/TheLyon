@@ -32,7 +32,7 @@ dispatcher.GetRequest('/Login',function(req,res){
    // testB=new Date();
     //testB=testB..setTime(testB.getTime() +  (1 * 24 * 60 * 60 * 1000));
    //console.log(testB)
-    res.end(dots.Login({})); 
+    res.end(dots.login({})); 
 });
 dispatcher.PostRequest('/Login',function(req,res){
     if(req.postData["email"]==loginEmail&&req.postData["password"]==loginPassword){
