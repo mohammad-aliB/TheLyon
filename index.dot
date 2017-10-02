@@ -39,7 +39,7 @@ body,html{
     display: inline-block;
     height: 100%;
     width: 50px;
-    text-align: center;
+    /*text-align: center;*/
     margin: 0 10px;
 
     }
@@ -51,6 +51,7 @@ body,html{
     height: 100%;
     margin: 0 10px;
     position: relative;
+    text-align: center;
     }
 
     #navbar ul li a:hover{
