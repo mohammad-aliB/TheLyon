@@ -64,7 +64,7 @@ body,html{
     font-size: 100px;
     width: 10px;
      display: none; 
-    margin: auto;
+    /*margin: auto;*/
     width: 100%;
     height: auto;
     line-height: 50px;
