@@ -243,8 +243,8 @@ body,html{
   <div id="logo"><img style="width: 100%;" src="/Static/logo.jpeg"></div>
   <div id="navbar">
       <ul id="navbar-ul" class="navbar-ul">
-        <li><a href="#">send</a></li>
-        <li><a href="#">memes</a></li>
+        <li><a href="#"><span>send</span></a></li>
+        <li><a href="#"><span>memes</span></a></li>
         <li><a href="#">NEWS</a></li>
         <li><a href="#">sports</a></li>
         <li><a href="#">staff</a></li>
