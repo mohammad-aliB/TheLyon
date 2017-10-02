@@ -203,7 +203,9 @@ body,html{
         bottom:0px;
         width:100%;
         height:50px;
-        background-color:black; 
+        background-color:black;
+        margin: 0;
+        padding: 0; 
     }
     @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
             #calendar{
