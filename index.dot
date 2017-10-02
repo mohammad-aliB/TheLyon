@@ -58,12 +58,15 @@ body,html{
     #navbar-mobile{
     font-size: 150%;
     width: 10px;
-    display: none;
+    /* display: none; */
     margin: auto;
-    width: 10px;
-    height: 100%;
+    width: 100%;
+    height: 10%;
     line-height: 50px;
     text-decoration: none;
+    text-align: center;
+    background: white;
+}
 
     }
     @media screen and (max-width: 600px) {
@@ -278,9 +281,11 @@ function mobileNavDropDown() {
     if (x.className === "navbar-ul") {
         x.className += " open";
         document.getElementById("navbar-mobile").innerHTML="X";
+        document.getElementById("navbar-mobile").style.position="fixed";
     } else {
         x.className = "navbar-ul";
         document.getElementById("navbar-mobile").innerHTML="&#9776;";
+        document.getElementById("navbar-mobile").style.position="";
 
     }
 }
