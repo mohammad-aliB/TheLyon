@@ -76,7 +76,7 @@ function scrapeSchoolDays(){
                 if(response["items"][x]["summary"]=="DAY 1"){
                 schoolDay.update({"date":new Date(response["items"][x]["start"]["date"])},{$set:{"day":1}},{upsert:true},function(err, result) {});
                     console.log("day 1")
-                }else if(response["items"][x]["summery"]=="DAY 2"){
+                }else if(response["items"][x]["summary"]=="DAY 2"){
                 schoolDay.update({"date":new Date(response["items"][x]["start"]["date"])},{$set:{"day":2}},{upsert:true},function(err, result) {});
                     console.log("day 2")
                 }
