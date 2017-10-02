@@ -30,12 +30,11 @@ dispatcher.GetRequest('/',function(req,res){
     //testB=testB..setTime(testB.getTime() +  (1 * 24 * 60 * 60 * 1000));
    //console.log(testB)
     schoolDay.findOne( {"date": test},function(error,result){
-        if(result){
-    res.end(dots.index({"currentDate":test,"day":result["day"]})); 
-        }else{
-    res.end(dots.index({"day":result["day"]})); 
 
-        }
+    res.end(dots.index({"currentDate":test,"day":result["day"]})); 
+
+
+        
     });
     //console.log(test)
 schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},function(err, result) {});
