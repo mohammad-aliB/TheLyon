@@ -58,7 +58,6 @@ dispatcher.GetRequest('/Admin',function(req,res){
         if(cookies.sessionToken==sessionToken){
             res.end("logged in me boi");
         }
-
     }
 });
 
