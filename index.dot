@@ -70,7 +70,7 @@ body,html{
     background: white;
 }
 
-    .navbar-ul:first-child{
+    #navbar-ul:first-child{
         display:none;
     }
 
@@ -248,7 +248,7 @@ body,html{
     display: block;
 
         }
-        .navbar-ul:first-child{
+        #navbar-ul:first-child{
             display:inherit;
         }
     }
