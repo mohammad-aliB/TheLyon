@@ -82,31 +82,29 @@ function calcTime( offset) {
     // return time as a string
     return nd.toISOString().split('T')[0];
 }
-function scrapeSchoolDays(){
-    var url = 'https://clients6.google.com/calendar/v3/calendars/wlmacci@gmail.com/events?calendarId=wlmacci%40gmail.com&singleEvents=true&timeZone=America%2FToronto&maxAttendees=1&maxResults=1000&sanitizeHtml=true&timeMin=2017-08-27T00%3A00%3A00-04%3A00&timeMax=2018-12-10T00%3A00%3A00-04%3A00&key=AIzaSyBNlYH01_9Hc5S1J9vuFmu2nUqBZJNAXxs';
+// function scrapeSchoolDays(){
+//     var url = 'https://clients6.google.com/calendar/v3/calendars/wlmacci@gmail.com/events?calendarId=wlmacci%40gmail.com&singleEvents=true&timeZone=America%2FToronto&maxAttendees=1&maxResults=1000&sanitizeHtml=true&timeMin=2017-08-27T00%3A00%3A00-04%3A00&timeMax=2018-12-10T00%3A00%3A00-04%3A00&key=AIzaSyBNlYH01_9Hc5S1J9vuFmu2nUqBZJNAXxs';
 
-    httpsModule.get(url, function(res){
-        var body = '';
-
-        res.on('data', function(chunk){
-            body += chunk;
-        });
-
-        res.on('end', function(){
-            var response = JSON.parse(body);
-           // console.log("Got a response: ", response);
-            for (x in response["items"]){
-                if(response["items"][x]["summary"]=="DAY 1"){
-                schoolDay.update({"date":new Date(response["items"][x]["start"]["date"])},{$set:{"day":1}},{upsert:true},function(err, result) {});
-                    // console.log("day 1")
-                }else if(response["items"][x]["summary"]=="DAY 2"){
-                schoolDay.update({"date":new Date(response["items"][x]["start"]["date"])},{$set:{"day":2}},{upsert:true},function(err, result) {});
-                    // console.log("day 2")
-                }
-            }
-        });
-    }).on('error', function(e){
-          console.log("Got an error: ", e);
-    });
-}
-scrapeSchoolDays();
+//     httpsModule.get(url, function(res){
+//         var body = '';
+//         res.on('data', function(chunk){
+//             body += chunk;
+//         });
+//         res.on('end', function(){
+//             var response = JSON.parse(body);
+//            // console.log("Got a response: ", response);
+//             for (x in response["items"]){
+//                 if(response["items"][x]["summary"]=="DAY 1"){
+//                 schoolDay.update({"date":new Date(response["items"][x]["start"]["date"])},{$set:{"day":1}},{upsert:true},function(err, result) {});
+//                     // console.log("day 1")
+//                 }else if(response["items"][x]["summary"]=="DAY 2"){
+//                 schoolDay.update({"date":new Date(response["items"][x]["start"]["date"])},{$set:{"day":2}},{upsert:true},function(err, result) {});
+//                     // console.log("day 2")
+//                 }
+//             }
+//         });
+//     }).on('error', function(e){
+//           console.log("Got an error: ", e);
+//     });
+// }
+// scrapeSchoolDays();
