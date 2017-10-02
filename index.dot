@@ -217,6 +217,9 @@ body,html{
             height:100%;
             top:-100%;
             background-color: white;
+
+            transition-property: all;
+            transition-duration: .5s;
         }
         #navbar ul li{
             margin:0;
@@ -238,12 +241,11 @@ body,html{
         #navbar-ul.open{
             top:35px;
         }
-        #navbar-mobile{
+/*        #navbar-mobile{
             top:0;
-    /* display: none; */
     display: block;
 
-}
+}*/
     }
 </style>
 </head>
@@ -253,6 +255,7 @@ body,html{
   <div id="logo"><img style="width: 100%;" src="/Static/logo.jpeg"></div>
   <div id="navbar">
       <ul id="navbar-ul" class="navbar-ul">
+        <li><a href="#" class="navbar-mobile-close"><span>X</span></a></li>
         <li><a href="#"><span>send</span></a></li>
         <li><a href="#"><span>memes</span></a></li>
         <li><a href="#"><span>NEWS</span></a></li>
@@ -307,12 +310,14 @@ function mobileNavDropDown() {
     var x = document.getElementById("navbar-ul");
     if (x.className === "navbar-ul") {
         x.className += " open";
-        document.getElementById("navbar-mobile").innerHTML="X";
-        document.getElementById("navbar-mobile").style.position="fixed";
+        // document.getElementById("navbar-mobile").innerHTML="X";
+        // document.getElementById("navbar-mobile").style.position="fixed";
+        document.getElementById("navbar-mobile-close").style.display="inherit";
     } else {
         x.className = "navbar-ul";
-        document.getElementById("navbar-mobile").innerHTML="&#9776;";
-        document.getElementById("navbar-mobile").style.position="";
+        // document.getElementById("navbar-mobile").innerHTML="&#9776;";
+        // document.getElementById("navbar-mobile").style.position="";
+        document.getElementById("navbar-mobile-close").style.display="none";
 
     }
 }
