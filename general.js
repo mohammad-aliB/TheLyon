@@ -3,8 +3,12 @@ var dot = require('dot');
 var dots = dot.process({path: "/TheLyon/TheLyon/"});
 var httpsModule=require('https');
 dispatcher.setUP(80,'0.0.0.0');
-
 var mongodb = require('mongodb');
+var loginEmail="mohammad-ali@bandzar.com"
+var loginPassword="asdfewasds123231232e123"
+var sessionToken=0;
+var cookie = require('cookie');
+const crypto = require('crypto');
 mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(err, db) {
     if(err) throw err;
     // loginLogs = db.collection("loginLogs");
@@ -35,14 +39,47 @@ dispatcher.GetRequest('/',function(req,res){
             result=[];
         }
     res.end(dots.index({"currentDate":test,"day":result["day"]})); 
-
-
-        
-    });
-    //console.log(test)
-schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},function(err, result) {});
 });
-                                 //   var document = {"a":"b"};//include exiration later
+dispatcher.GetRequest('/Login',function(req,res){
+    test=new Date(calcTime(-4));
+   // testB=new Date();
+    //testB=testB..setTime(testB.getTime() +  (1 * 24 * 60 * 60 * 1000));
+   //console.log(testB)
+    res.end(dots.Login({})); 
+});
+dispatcher.PostRequest('/Login',function(req,res){
+    if(req.postData["email"]==loginEmail&&req.postData["password"]==loginPassword){
+            crypto.randomBytes(48, function(err, buffer) {
+                sessionToken = buffer.toString('hex');
+                res.writeHead(302, {
+                    'Location': '/Admin',
+                    'Set-Cookie': 'sessionToken='+sessionToken+'; Expires=Tue, 19 Jan 2038 03:14:07 UTC; HttpOnly;';
+                });
+                res.end();
+            });
+    }else{
+        res.end("wrong credentials")
+    }
+});
+dispatcher.GetRequest('/Logout',function(req,res){
+    sessionToken=0;
+});
+dispatcher.GetRequest('/Admin',function(req,res){
+    if(sessionToken==0){
+        res.end("pls login")
+    }else{
+        var cookies = cookie.parse(req.headers.cookie || '');
+        if(cookies.sessionToken==sessionToken){
+            res.end("logged in me boi");
+        }
+
+    }
+});
+
+    //console.log(test)
+// schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},function(err, result) {});
+// });
+//                                  //   var document = {"a":"b"};//include exiration later
                            //       aschoolDay.insert(document, function(err, records) {
                             //            if (err) throw err;             
                             //            });
@@ -75,10 +112,10 @@ function scrapeSchoolDays(){
             for (x in response["items"]){
                 if(response["items"][x]["summary"]=="DAY 1"){
                 schoolDay.update({"date":new Date(response["items"][x]["start"]["date"])},{$set:{"day":1}},{upsert:true},function(err, result) {});
-                    console.log("day 1")
+                    // console.log("day 1")
                 }else if(response["items"][x]["summary"]=="DAY 2"){
                 schoolDay.update({"date":new Date(response["items"][x]["start"]["date"])},{$set:{"day":2}},{upsert:true},function(err, result) {});
-                    console.log("day 2")
+                    // console.log("day 2")
                 }
             }
         });
@@ -86,4 +123,4 @@ function scrapeSchoolDays(){
           console.log("Got an error: ", e);
     });
 }
-scrapeSchoolDays();
+//scrapeSchoolDays();
