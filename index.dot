@@ -203,6 +203,9 @@ body,html{
                 position: relative;
         z-index: -1;/* to prevent overlap with mobile navbar*/
             }
+            #view-calander{
+                position: inherit;
+            }
         #navbar ul{
             display:block;
             position:fixed;
