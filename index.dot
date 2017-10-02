@@ -56,12 +56,13 @@ body,html{
     /*background-color: #e0e0e0;*/
     }
     #navbar-mobile{
-        font-size: 150%;
-        width: 10px;
-        display:none;
-        margin:  auto;   
-        width: 100%;
-        height: 100%;
+    font-size: 150%;
+    width: 10px;
+    display: none;
+    margin: auto;
+    width: 10px;
+    height: 100%;
+    line-height: 50px;
 
     }
     @media screen and (max-width: 600px) {
