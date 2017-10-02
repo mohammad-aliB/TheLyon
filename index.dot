@@ -72,7 +72,7 @@ body,html{
 
     #calendar{
         width:760px;
-        height:200px;
+        height:auto;
         border:1px solid black;
         margin:100px auto 0 auto;
 
