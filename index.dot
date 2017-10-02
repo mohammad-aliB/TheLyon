@@ -312,13 +312,9 @@ function mobileNavDropDown() {
     var x = document.getElementById("navbar-ul");
     if (x.className === "navbar-ul") {
         x.className += " open";
-        // document.getElementById("navbar-mobile").innerHTML="X";
-        // document.getElementById("navbar-mobile").style.position="fixed";
         document.getElementById("navbar-mobile-close").style.display="inherit";
     } else {
         x.className = "navbar-ul";
-        // document.getElementById("navbar-mobile").innerHTML="&#9776;";
-        // document.getElementById("navbar-mobile").style.position="";
         document.getElementById("navbar-mobile-close").style.display="none";
 
     }
