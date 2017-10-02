@@ -53,7 +53,7 @@ dispatcher.PostRequest('/Login',function(req,res){
                 sessionToken = buffer.toString('hex');
                 res.writeHead(302, {
                     'Location': '/Admin',
-                    'Set-Cookie': 'sessionToken='+sessionToken+'; Expires=Tue, 19 Jan 2038 03:14:07 UTC; HttpOnly;';
+                    'Set-Cookie': 'sessionToken='+sessionToken+'; Expires=Tue, 19 Jan 2038 03:14:07 UTC; HttpOnly;'
                 });
                 res.end();
             });
