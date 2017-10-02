@@ -177,9 +177,10 @@ body,html{
     #articles .title{
         display: inline-block;
         color:blue;
-        border-bottom:1px solid black;
+        /*border-bottom:1px solid black;*/
         font-size: 150%;
         width:100%;
+        margin-bottom: -5px;
     }
     #articles .date-author{
         list-style: none;
@@ -192,6 +193,10 @@ body,html{
     }
     #articles .author{
         display:inline;
+    }
+    .article{
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
     }
     @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
             #calendar{
@@ -257,6 +262,9 @@ body,html{
         #navbar-ul li:first-child{
             display:inherit;
         }
+        #articles{
+            font-size:200%;
+        }
     }
 </style>
 </head>
@@ -295,22 +303,22 @@ body,html{
   </div>
 
     <ul id="articles">
-        <li>
+        <li class="article">
             <a href="#"class="title">hello meme jesus</a>
                 <ul class="date-author"><li class="date">sept 22</li><li class="author">BY:alex</li></ul>
                 <div class="body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic </div>
         </li>
-        <li>
+        <li class="article">
             <a href="#"class="title">hello meme jesus</a>
                 <ul class="date-author"><li class="date">sept 22</li><li class="author">BY:alex</li></ul>
                 <div class="body">hello world</div>
         </li>
-        <li>
+        <li class="article">
             <a href="#"class="title">hello meme jesus</a>
                 <ul class="date-author"><li class="date">sept 22</li><li class="author">BY:alex</li></ul>
                 <div class="body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical </div>
         </li>
-        <li>
+        <li class="article">
             <a href="#"class="title">hello meme jesus</a>
                 <ul class="date-author"><li class="date">sept 22</li><li class="author">BY:alex</li></ul>
                 <div class="body">hello world</div>
