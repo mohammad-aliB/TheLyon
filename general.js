@@ -109,4 +109,4 @@ function scrapeSchoolDays(){
           console.log("Got an error: ", e);
     });
 }
-//scrapeSchoolDays();
+scrapeSchoolDays();
