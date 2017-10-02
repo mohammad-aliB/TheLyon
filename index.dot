@@ -70,7 +70,9 @@ body,html{
     background: white;
 }
 
-    
+    #navbar-mobile-close{
+        display:none;
+    }
 
     #calendar{
         width:760px;
@@ -241,11 +243,11 @@ body,html{
         #navbar-ul.open{
             top:35px;
         }
-/*        #navbar-mobile{
-            top:0;
+/       #navbar-mobile{
+            /*top:0;*/
     display: block;
 
-}*/
+}
     }
 </style>
 </head>
