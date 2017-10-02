@@ -107,7 +107,6 @@ body,html{
         width:50%;
         float:right;
         position: relative;
-        z-index: -1;/* to prevent overlap with mobile navbar*/
         /*background-color: blue;*/
     }
     #schedule ul{
@@ -180,7 +179,7 @@ body,html{
     #articles .author{
         display:inline;
     }
-        @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
+    @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
             #calendar{
                 height:400px;
                 width:90%;
@@ -195,7 +194,7 @@ body,html{
                 float:none;
                 width:100%;
                 position: relative;
-                z-index:-1;
+        z-index: -1;/* to prevent overlap with mobile navbar*/
             }
         #navbar ul{
             display:block;
