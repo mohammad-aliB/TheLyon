@@ -61,7 +61,7 @@ body,html{
      display: none; 
     margin: auto;
     width: 100%;
-    height: 30px;
+    height: auto;
     line-height: 50px;
     text-decoration: none;
     text-align: center;
@@ -116,12 +116,12 @@ body,html{
     }
     #schedule ul .date{
         background-color:grey;
-        height:20px;
+        height:auto;
         padding-left:10px;
     }
     #schedule ul .event{
         /*border-bottom:1px solid black;*/
-        height:20px;
+        height:auto;
     }
 
     #schedule ul .event a{
@@ -138,7 +138,7 @@ body,html{
     #schedule #view-calander{
         text-decoration: none;
         width:100%;
-        height:20px;
+        height:auto;
         bottom:0;
         position: absolute;
         text-align: center;
