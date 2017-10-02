@@ -71,15 +71,15 @@ function scrapeSchoolDays(){
 
         res.on('end', function(){
             var response = JSON.parse(body);
-            for (x in response[0]["items"]){
-                if(response[0]["items"]["summary"]=="DAY 1"){
-                schoolDay.update({"date":new Date(response[0]["items"]["start"]["date"])},{$set:{"day":1}},{upsert:true},function(err, result) {});
+            console.log("Got a response: ", response);
+            for (x in response["items"]){
+                if(response["items"]["summary"]=="DAY 1"){
+                schoolDay.update({"date":new Date(response["items"]["start"]["date"])},{$set:{"day":1}},{upsert:true},function(err, result) {});
                 
-                }else if(response[0]["items"]["summery"]=="DAY 2"){
-                schoolDay.update({"date":new Date(response[0]["items"]["start"]["date"])},{$set:{"day":2}},{upsert:true},function(err, result) {});
+                }else if(response["items"]["summery"]=="DAY 2"){
+                schoolDay.update({"date":new Date(response["items"]["start"]["date"])},{$set:{"day":2}},{upsert:true},function(err, result) {});
                 }
             }
-            console.log("Got a response: ", response);
         });
     }).on('error', function(e){
           console.log("Got an error: ", e);
