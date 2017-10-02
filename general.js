@@ -50,6 +50,10 @@ dispatcher.PostRequest('/Login',function(req,res){
 });
 dispatcher.GetRequest('/Logout',function(req,res){
     sessionToken=0;
+                res.writeHead(200, {
+                'Set-Cookie': 'sessionToken=null; Expires=Tue, 19 Jan 2000 03:14:07 UTC; HttpOnly;'
+            });
+    res.end("logged out");
 });
 dispatcher.GetRequest('/Admin',function(req,res){
     if(sessionToken==0){
