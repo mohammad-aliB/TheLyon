@@ -260,7 +260,7 @@ body,html{
   <div id="logo"><img style="width: 100%;" src="/Static/logo.jpeg"></div>
   <div id="navbar">
       <ul id="navbar-ul" class="navbar-ul">
-        <li><a href="#" class="navbar-mobile-close" onclick="mobileNavDropDown()"><span>X</span></a></li>
+        <li><a href="#" id="navbar-mobile-close" onclick="mobileNavDropDown()"><span>X</span></a></li>
         <li><a href="#"><span>send</span></a></li>
         <li><a href="#"><span>memes</span></a></li>
         <li><a href="#"><span>NEWS</span></a></li>
