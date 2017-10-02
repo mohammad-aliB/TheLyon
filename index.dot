@@ -76,7 +76,7 @@ body,html{
             width:100%;
             height:10%;
         }
-        #navbar-ul .open{
+        #navbar-ul.open{
             top:0;
         }
         #navbar-mobile{
