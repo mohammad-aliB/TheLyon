@@ -32,6 +32,9 @@ dispatcher.GetRequest('/',function(req,res){
     schoolDay.findOne( {"date": test},function(error,result){
         if(result){
     res.end(dots.index({"currentDate":test,"day":result["day"]})); 
+        }else{
+    res.end(dots.index({"day":result["day"]})); 
+
         }
     });
     //console.log(test)
