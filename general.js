@@ -30,7 +30,9 @@ dispatcher.GetRequest('/',function(req,res){
     //testB=testB..setTime(testB.getTime() +  (1 * 24 * 60 * 60 * 1000));
    //console.log(testB)
     schoolDay.findOne( {"date": test},function(error,result){
-
+        if(!result){
+            result=[];
+        }
     res.end(dots.index({"currentDate":test,"day":result["day"]})); 
 
 
