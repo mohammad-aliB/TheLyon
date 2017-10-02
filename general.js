@@ -11,22 +11,8 @@ var cookie = require('cookie');
 const crypto = require('crypto');
 mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(err, db) {
     if(err) throw err;
-    // loginLogs = db.collection("loginLogs");
-    // userData=db.collection("userData")
-    // tagData=db.collection("tagData")
-    // articleData=db.collection("articles")
-    // menuData=db.collection("menus")
-    // sessionStore=db.collection("sessionStore")
-    // CategoryDatabase=db.collection("Category_Store")
-    // CSRF_Store=db.collection("CSRF_Store")
-    // UserDatabase=db.collection("User_Store")
-    // SessionDatabase=db.collection("Session_Store")
-    // ArticleDatabase=db.collection("Article_Store")
-    // TagDatabase=db.collection("Tag_Store")
-    // SearchDatabase=db.collection("Search_Store")
     calendar=db.collection("calendar")
     schoolDay=db.collection("schoolDay")
-   // console.log("hiiiiii")
 });
 dispatcher.staticDirectory('/Static','/TheLyon/TheLyon/staticFiles');
 dispatcher.GetRequest('/',function(req,res){
@@ -49,14 +35,14 @@ dispatcher.GetRequest('/Login',function(req,res){
 });
 dispatcher.PostRequest('/Login',function(req,res){
     if(req.postData["email"]==loginEmail&&req.postData["password"]==loginPassword){
-            crypto.randomBytes(48, function(err, buffer) {
-                sessionToken = buffer.toString('hex');
-                res.writeHead(302, {
-                    'Location': '/Admin',
-                    'Set-Cookie': 'sessionToken='+sessionToken+'; Expires=Tue, 19 Jan 2038 03:14:07 UTC; HttpOnly;'
-                });
-                res.end();
+        crypto.randomBytes(48, function(err, buffer) {
+            sessionToken = buffer.toString('hex');
+            res.writeHead(302, {
+                'Location': '/Admin',
+                'Set-Cookie': 'sessionToken='+sessionToken+'; Expires=Tue, 19 Jan 2038 03:14:07 UTC; HttpOnly;'
             });
+            res.end();
+        });
     }else{
         res.end("wrong credentials")
     }
@@ -66,7 +52,7 @@ dispatcher.GetRequest('/Logout',function(req,res){
 });
 dispatcher.GetRequest('/Admin',function(req,res){
     if(sessionToken==0){
-        res.end("pls login")
+        res.end("pls login");
     }else{
         var cookies = cookie.parse(req.headers.cookie || '');
         if(cookies.sessionToken==sessionToken){
