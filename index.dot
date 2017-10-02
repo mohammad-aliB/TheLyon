@@ -73,7 +73,7 @@ body,html{
     #calendar{
         width:760px;
         height:auto;
-        border:1px solid black;
+        /*border:1px solid black;*/
         margin:100px auto 0 auto;
 
     }
@@ -84,7 +84,7 @@ body,html{
         height:200px;
         width:50%;
         float:left;
-        border-right:1px solid black;
+        border:1px solid black;
     }
     #day-text{
         top:0;
@@ -107,6 +107,9 @@ body,html{
         width:50%;
         float:right;
         position: relative;
+        border-left:1px solid black;
+        border-top:1px solid black;
+        border-bottom:1px solid black;
         /*background-color: blue;*/
     }
     #schedule ul{
@@ -148,7 +151,8 @@ body,html{
     }
     #articles{
     max-width: 960px;
-    margin: 100px auto 0 auto;
+    margin: 0 auto 0 auto;
+    padding-top:200px;
     /* padding-top: 900px; */
     /*background-color: black;*/
 
