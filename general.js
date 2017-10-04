@@ -99,7 +99,7 @@ dispatcher.PostRequest('/Admin/Calendar/Update', function(req,res){
                 }else{
                     crypto.randomBytes(48, function(err, buffer) {
                         id = buffer.toString('hex');
-                        calendar.update({"id":req.postData["id"]},{$set:{"date":new Date(req.postData["date"]),"name":req.postData["name"],"description":req.postData["description"],"published":req.postData["published"]}},{upsert:true},function(err, result) {
+                        calendar.update({"id":req.postData["id"]},{$set:{"id":id,"date":new Date(req.postData["date"]),"name":req.postData["name"],"description":req.postData["description"],"published":req.postData["published"]}},{upsert:true},function(err, result) {
                             if(!err){
                               res.end("successful");
                             }
