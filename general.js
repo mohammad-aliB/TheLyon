@@ -61,7 +61,25 @@ dispatcher.GetRequest('/Admin',function(req,res){
     }else{
         var cookies = cookie.parse(req.headers.cookie || '');
         if(cookies.sessionToken==sessionToken){
-            res.end("logged in me boi");
+            res.end(dots.admin({}));
+        }
+    }
+});
+dispatcher.GetRequest('/Calendar',function(req,res){
+    if(sessionToken==0){
+        res.end("<html><body>pls <a href=\"/Login\">LOGIN</a></body></html>");
+    }else{
+        var cookies = cookie.parse(req.headers.cookie || '');
+        if(cookies.sessionToken==sessionToken){
+            calendar.find({}).toArray(function(err, events) {
+                if(!err){
+                    //events=[];
+                    // for (var i = 0; i < eventResults.length; i++) {
+                    //     events.push(tagResult[i].tagID);
+                    // }
+                    res.end(dots.calendar({"events":events}));
+                }
+            });
         }
     }
 });

@@ -1,0 +1,22 @@
+<html>
+<body>
+    <a href="#" onclick="newEvent()">New Event</a>
+    <ul>
+        {{ for(var events in it.events) { }}
+            <li>
+                <form action="/calendar/update">
+                    <input type="text" name="id" style="display:none;" value="{{=events.id}}">
+                    Date: <input type="text" name="Date" value="{{=events.startDate}}">
+                    Name: <input type="text" name="Date" value="{{=events.name}}">
+                    Description: <input type="text" name="Date" value="{{=events.description}}">
+                    Published: <input type="checkbox" name="published" value="published" checked="{{=events.published}}">
+                    <input type="submit" value="Submit">
+                </form>
+            </li>
+        {{ } }}
+    </ul>
+    <script type="text/javascript">
+        
+    </script>
+</body>
+</html>
