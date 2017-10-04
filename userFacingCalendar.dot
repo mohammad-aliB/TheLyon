@@ -1,0 +1,437 @@
+<html>
+<head>
+<style type="text/css">
+    table{
+        border-collapse: collapse;
+    }
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        /* padding: 8px; */
+        margin: 0;
+        padding:0;
+        width: 100px;
+    }
+    ul{
+        min-height:100px;
+        list-style:none;
+        padding:0;
+    }
+    .number{    
+        text-align: right;
+        background-color: #eaeaea;
+        width: 100%;
+        display: block;
+    }
+    .event-text {
+        position: relative;
+        display: inline-block;
+        padding-left:3px;
+    }
+    .event-text:hover{
+        border-left:1px solid red;
+    }
+    .event-text .hover-text{
+        visibility: hidden;
+        width: 200px;
+        background-color: white;
+        border: 1px solid black;
+        color: grey;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 110%;
+    }
+    .event-text .hover-text span{
+        margin:10px;
+        display: block;
+    }
+    .event-text:hover .hover-text {
+        visibility: visible;
+    }
+    @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
+        .hover-text{
+            display:none;
+        }
+        tr:first-child{
+            display:none;
+        }
+        td{
+            display:block;
+            width:90%;
+            margin:0 auto;
+        }
+    }
+</style>
+</head>
+<body>
+    <div id="calendar-title">october</div>
+<table>
+    <tr>
+        <th>Sunday</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+    </tr>
+    <tr>
+        <td>
+            <span class="number">1</span>
+            <ul>
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>       
+                 <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>         
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </td>
+        <td>
+            <span class="number">1</span>
+            <ul>
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>       
+                 <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>         
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </td>
+        <td>
+            <span class="number">1</span>
+            <ul>
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>       
+                 <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>         
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </td>
+        <td>
+            <span class="number">1</span>
+            <ul>
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>       
+                 <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>         
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </td>
+        <td>
+            <span class="number">1</span>
+            <ul>
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>       
+                 <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>         
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </td>
+        <td>
+            <span class="number">1</span>
+            <ul>
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>       
+                 <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>         
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </td>
+        <td>
+            <span class="number">1</span>
+            <ul>
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>       
+                 <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>         
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </td>
+        <td>
+            <span class="number">1</span>
+            <ul>
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>       
+                 <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>         
+                <li>
+                    <span class="event-text">
+                        PA Day
+                        <span class="hover-text">
+                            <span>
+                                <span class="hover-event-text">P.A day</span>
+                                <span class="hover-event-date">starts: 3:30 june 24</span>
+                                <span class="hover-event-location">location:home</span>
+                                <span class="hover-event-description">pa day no school</span>
+                            </span>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -112,7 +112,16 @@ dispatcher.PostRequest('/Admin/Calendar/Update', function(req,res){
     }
 
 });
+dispatcher.GetRequest('/Calendar',function(req,res){
 
+                    //console.log(events);
+                    //events=[];
+                    // for (var i = 0; i < eventResults.length; i++) {
+                    //     events.push(tagResult[i].tagID);
+                    // }
+                    res.end(dots.userFacingCalendar({}));
+                
+});
     //console.log(test)
 // schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},function(err, result) {});
 // });
