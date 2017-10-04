@@ -211,17 +211,17 @@ dispatcher.GetRequest('/Calendar/*/*',function(req,res){
     }
     var firstDay = new Date(year + "-" + month + "-01").getDay()//0  is sunday and 6 is saturday
     var numberOfDays = new Date(year,(month+1), 0).getDate();
-        calendar.find({"date":{$gte:minimum, $lt:maximum}}).sort({date: 1}.toArray(function(err, events) {
-            if(!err){
+    calendar.find({"date":{$gte:minimum, $lt:maximum}}).sort({date: 1}.toArray(function(err, events) {
+        if(!err){
                 res.end(dots.userFacingCalendar({"month":month,"firstDay":firstDay,"events":events}));
 
-            }
+        }
                     //console.log(events);
                     //events=[];
                     // for (var i = 0; i < eventResults.length; i++) {
                     //     events.push(tagResult[i].tagID);
                     // }
-                
+   });             
 });
     //console.log(test)
 // schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},function(err, result) {});
