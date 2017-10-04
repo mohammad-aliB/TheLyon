@@ -26,18 +26,18 @@
             var description=document.getElementById("description-"+id).value;
             var published=document.getElementById("published-"+id).checked;
             var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        if(this.responseText=="successful"){
-            location.reload();
-        }else{
-            alert("error");
-        }
-    }
-  };
-  xhttp.open("POST", "/Admin/Calendar/Update", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("id="+id+"&date="+date+"&name"+name+"&description="+description+"&published="+published+"&CSRF=asdfghjklkjhgfdsasdfghjkjhgfdfghgfdfg1232");
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText=="successful"){
+                    location.reload();
+                }else{
+                    alert("error");
+                }
+            }
+          };
+          xhttp.open("POST", "/Admin/Calendar/Update", true);
+          xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          xhttp.send("id="+id+"&date="+date+"&name"+name+"&description="+description+"&published="+published+"&CSRF=asdfghjklkjhgfdsasdfghjkjhgfdfghgfdfg1232");
         }
     </script>
 </body>
