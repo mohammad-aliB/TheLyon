@@ -113,6 +113,7 @@ dispatcher.PostRequest('/Admin/Calendar/Update', function(req,res){
 
 });
 dispatcher.GetRequest('/Calendar/*/*',function(req,res){
+    year=0;
     if(req.url.includes("2017")){
         year=2017;
     }else if(req.url.includes("2018")){
@@ -122,7 +123,7 @@ dispatcher.GetRequest('/Calendar/*/*',function(req,res){
     }else if(req.url.includes("2020")){
         year=2020;
     }
-    if(year){
+    if(year !=0){
         if(req.url.includes("January")){
             //month="January"
             month=1;
