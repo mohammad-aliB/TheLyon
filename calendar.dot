@@ -16,7 +16,7 @@
                 Name: <input type="text" id="name-new-event" name="name" >
                 Description: <input type="text" id="description-new-event" name="Date">
                 Published: <input type="checkbox" id="published-new-event" name="published" value="published" >
-                <a href="#" onclick="updateEvents(\"new-event\")">create</a>
+                <a href="#" onclick="updateEvents('new-event')">create</a>
             </li>
     </ul>
     <script type="text/javascript">

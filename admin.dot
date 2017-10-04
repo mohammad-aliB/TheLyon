@@ -1,6 +1,6 @@
 <html>
 <body>
     <a href="/Logout">Logout</a><br>
-    <a href="/Calendar">Calendar</a>
+    <a href="/Admin/Calendar">Calendar</a>
 </body>
 </html>
