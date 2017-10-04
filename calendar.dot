@@ -8,7 +8,7 @@
                     Date: <input type="text" id="date-{{=event.id}}" name="date" value="{{=event.startDate}}">
                     Name: <input type="text" id="name-{{=event.id}}" name="name" value="{{=event.name}}">
                     Description: <input type="text" id="description-{{=event.id}}" name="Date" value="{{=event.description}}">
-                    Published: <input type="checkbox" id="published-{{=event.id}}" name="published" value="published" {{? event.published==true}}checked{{?}}>
+                    Published: <input type="checkbox" id="published-{{=event.id}}" name="published" value="published" {{? event.published=="true"}}checked{{?}}>
                     <a href="#" onclick="updateEvents('{{=event.id}}')">Update</a>
             </li>
         {{~}}
