@@ -69,7 +69,7 @@
 </style>
 </head>
 <body>
-    <div id="calendar-title">october</div>
+    <div id="calendar-title">{{=it.month||''}}</div>
 <table>
     <tr>
         <th>Sunday</th>
@@ -80,7 +80,16 @@
         <th>Friday</th>
         <th>Saturday</th>
     </tr>
-    <tr>
+    {{var dayCount = 0;}}
+    {{~it.events :event:index}}
+        {{if(dayCount==0){}}
+          <tr>a</tr>  
+        {{ }else if(dayCount==6){ }}
+
+        {{ } }}
+    {{~}}
+
+<!--     <tr>
         <td>
             <span class="number">1</span>
             <ul>
@@ -435,7 +444,7 @@
                 </li>
             </ul>
         </td>
-    </tr>
+    </tr> -->
 </table>
 
 </body>

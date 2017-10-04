@@ -112,15 +112,115 @@ dispatcher.PostRequest('/Admin/Calendar/Update', function(req,res){
     }
 
 });
-dispatcher.GetRequest('/Calendar/*',function(req,res){
-    
+dispatcher.GetRequest('/Calendar/*/*',function(req,res){
+    if(req.url.includes("2017")){
+        year=2017;
+    }else if(req.url.includes("2018")){
+        year=2018;
+    }else if(req.url.includes("2019")){
+        year=2019;
+    }else if(req.url.includes("2020")){
+        year=2020;
+    }
+    if(req.url.includes("January")){
+        //month="January"
+        month=1;
+        if(year>2017){
+            lastMonth="/"+(year-1)+"/December";
+        }
+        nextMonth="/"+year+"/Febuary";
+        minimum=new Date(year+" January")//greater than or equal to this 
+        maximum=new Date(year+" Febuary")//less than this        
+    }else if(req.url.includes("Febuary")){
+        //month="Febuary"
+        month=2;
+        lastMonth="/"+year+"/January";
+        nextMonth="/"+year+"/March";
+        minimum=new Date(year+" Febuary")//greater than or equal to this 
+        maximum=new Date(year+" March")//less than this
+    }else if(req.url.includes("March")){
+        //month="March"
+        month=3;
+        lastMonth="/"+year+"/Febuary";
+        nextMonth="/"+year+"/April";
+        minimum=new Date(year+" March")//greater than or equal to this 
+        maximum=new Date(year+" April")//less than this
+    }else if(req.url.includes("April")){
+        //month="April"
+        month=4;
+        lastMonth="/"+year+"/March";
+        nextMonth="/"+year+"/May";
+        minimum=new Date(year+" April")//greater than or equal to this 
+        maximum=new Date(year+" May")//less than this
+    }else if(req.url.includes("May")){
+        //month="May"
+        month=5;
+        lastMonth="/"+year+"/April";    
+        nextMonth="/"+year+"/June";
+        minimum=new Date(year+" May")//greater than or equal to this 
+        maximum=new Date(year+" June")//less than this
+    }else if(req.url.includes("June")){
+        //month="June"
+        month=6;
+        lastMonth="/"+year+"/May";
+        nextMonth="/"+year+"/July";
+        minimum=new Date(year+" June")//greater than or equal to this 
+        maximum=new Date(year+" July")//less than this
+    }else if(req.url.includes("July")){
+        //month="July"
+        month=7;
+        lastMonth="/"+year+"/June";
+        nextMonth="/"+year+"/Augest";
+        minimum=new Date(year+" July")//greater than or equal to this 
+        maximum=new Date(year+" Augest")//less than this
+    }else if(req.url.includes("Augest")){
+        //month="Augest"
+        month=8;
+        lastMonth="/"+year+"/July";
+        nextMonth="/"+year+"/September";
+        minimum=new Date(year+" Augest")//greater than or equal to this 
+        maximum=new Date(year+" September")//less than this
+    }else if(req.url.includes("September")){
+        //month="September"
+        month=9;
+        lastMonth="/"+year+"/Augest";
+        nextMonth="/"+year+"/October";
+        minimum=new Date(year+" September")//greater than or equal to this 
+        maximum=new Date(year+" October")//less than this
+    }else if(req.url.includes("October")){
+        //month="October"
+        month=10;
+        lastMonth="/"+year+"/September";
+        nextMonth="/"+year+"/November";
+        minimum=new Date(year+" October")//greater than or equal to this 
+        maximum=new Date(year+" November")//less than this
+    }else if(req.url.includes("November")){
+        //month="November"
+        month=11;
+        lastMonth="/"+year+"/October";
+        nextMonth="/"+year+"/December";
+        minimum=new Date(year+" November")//greater than or equal to this 
+        maximum=new Date(year+" December")//less than this
+    }else if(req.url.includes("December")){
+        //month="December"
+        month=12;
+        lastMonth="/"+year+"/November";
+        nextMonth="/"+(year+1)+"/January";
+        minimum=new Date(year+" December")//greater than or equal to this 
+        maximum=new Date((year+1)+" January")//less than this
+    }
+    var firstDay = new Date(year + "-" + month + "-01").getDay()//0  is sunday and 6 is saturday
+    var numberOfDays = new Date(year,(month+1), 0).getDate();
+        calendar.find({"date":{$gte:minimum, $lt:maximum}}).sort({date: 1}.toArray(function(err, events) {
+            if(!err){
+                res.end(dots.userFacingCalendar({"month":month,"firstDay":firstDay,"events":events}));
 
+            }
                     //console.log(events);
                     //events=[];
                     // for (var i = 0; i < eventResults.length; i++) {
                     //     events.push(tagResult[i].tagID);
                     // }
-                    res.end(dots.userFacingCalendar({}));
                 
 });
     //console.log(test)
