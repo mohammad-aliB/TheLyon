@@ -51,6 +51,9 @@
         visibility: visible;
     }
     @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
+        table{
+            width:100%;
+        }
         .hover-text{
             display:none;
         }

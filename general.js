@@ -112,7 +112,8 @@ dispatcher.PostRequest('/Admin/Calendar/Update', function(req,res){
     }
 
 });
-dispatcher.GetRequest('/Calendar',function(req,res){
+dispatcher.GetRequest('/Calendar/*',function(req,res){
+    
 
                     //console.log(events);
                     //events=[];
