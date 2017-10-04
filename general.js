@@ -65,7 +65,7 @@ dispatcher.GetRequest('/Admin',function(req,res){
         }
     }
 });
-dispatcher.GetRequest('/Calendar',function(req,res){
+dispatcher.GetRequest('/Admin/Calendar',function(req,res){
     if(sessionToken==0){
         res.end("<html><body>pls <a href=\"/Login\">LOGIN</a></body></html>");
     }else{
