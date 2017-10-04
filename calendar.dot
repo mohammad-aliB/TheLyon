@@ -2,13 +2,13 @@
 <body>
     <a href="#" onclick="newEvent()">New Event</a>
     <ul>
-        {{ for(var events in it.events) { }}
+        {{ for(var event in it.events) { }}
             <li>
-                    Date: <input type="text" id="date-{{=events.id}}" name="date" value="{{=events.startDate}}">
-                    Name: <input type="text" id="name-{{=events.id}}" name="name" value="{{=events.name}}">
-                    Description: <input type="text" id="description-{{=events.description}}" name="Date" value="{{=events.description}}">
-                    Published: <input type="checkbox" id="published-{{=events.id}}" name="published" value="published" checked="{{=events.published}}">
-                    <a href="#" onclick="updateEvents(\"{{=events.id}}\")">Update</a>
+                    Date: <input type="text" id="date-{{=event.id}}" name="date" value="{{=event.startDate}}">
+                    Name: <input type="text" id="name-{{=event.id}}" name="name" value="{{=event.name}}">
+                    Description: <input type="text" id="description-{{=event.description}}" name="Date" value="{{=event.description}}">
+                    Published: <input type="checkbox" id="published-{{=event.id}}" name="published" value="published" checked="{{=event.published}}">
+                    <a href="#" onclick="updateEvents(\"{{=event.id}}\")">Update</a>
             </li>
         {{ } }}
             <li>
