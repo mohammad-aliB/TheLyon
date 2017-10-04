@@ -83,6 +83,34 @@ dispatcher.GetRequest('/Calendar',function(req,res){
         }
     }
 });
+dispatcher.PostRequest('/Admin/Calendar/Update', function(req,res){
+    if(sessionToken==0){
+        res.end("<html><body>pls <a href=\"/Login\">LOGIN</a></body></html>");
+    }else{
+        var cookies = cookie.parse(req.headers.cookie || '');
+        if(cookies.sessionToken==sessionToken){
+            if(req.postData["CSRF"]=="asdfghjklkjhgfdsasdfghjkjhgfdfghgfdfg1232"){
+                if(req.postData["id"]!="new-event"){
+                    calendar.update({"id":req.postData["id"]},{$set:{"date":new Date(req.postData["date"]),"name":req.postData["name"],"description":req.postData["description"],"published":req.postData["published"]}},{upsert:false},function(err, result) {
+                        if(!err){
+                            res.end("success");
+                        }
+                    });
+                }else{
+                    crypto.randomBytes(48, function(err, buffer) {
+                        id = buffer.toString('hex');
+                        calendar.update({"id":req.postData["id"]},{$set:{"date":new Date(req.postData["date"]),"name":req.postData["name"],"description":req.postData["description"],"published":req.postData["published"]}},{upsert:true},function(err, result) {
+                            if(!err){
+                              res.end("success");
+                            }
+                        });
+                    });
+                }
+            }
+        }
+    }
+
+});
 
     //console.log(test)
 // schoolDay.update({"date":new Date("2017-9-28")},{$set:{"day":2}},{upsert:true},function(err, result) {});

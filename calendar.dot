@@ -4,19 +4,41 @@
     <ul>
         {{ for(var events in it.events) { }}
             <li>
-                <form action="/calendar/update">
-                    <input type="text" name="id" style="display:none;" value="{{=events.id}}">
-                    Date: <input type="text" name="Date" value="{{=events.startDate}}">
-                    Name: <input type="text" name="Date" value="{{=events.name}}">
-                    Description: <input type="text" name="Date" value="{{=events.description}}">
-                    Published: <input type="checkbox" name="published" value="published" checked="{{=events.published}}">
-                    <input type="submit" value="Submit">
-                </form>
+                    Date: <input type="text" id="date-{{=events.id}}" name="date" value="{{=events.startDate}}">
+                    Name: <input type="text" id="name-{{=events.id}}" name="name" value="{{=events.name}}">
+                    Description: <input type="text" id="description-{{=events.description}}" name="Date" value="{{=events.description}}">
+                    Published: <input type="checkbox" id="published-{{=events.id}}" name="published" value="published" checked="{{=events.published}}">
+                    <a href="#" onclick="updateEvents(\"{{=events.id}}\")">Update</a>
             </li>
         {{ } }}
+            <li>
+                Date: <input type="text" id="date-new-event" name="date" >
+                Name: <input type="text" id="name-new-event" name="name" >
+                Description: <input type="text" id="description-new-event" name="Date">
+                Published: <input type="checkbox" id="published-new-event" name="published" value="published" >
+                <a href="#" onclick="updateEvents(\"new-event\")">create</a>
+            </li>
     </ul>
     <script type="text/javascript">
-        
+        function updateEvents(id){
+            var date=document.getElementById("date-"+id).value;
+            var name=document.getElementById("name-"+id).value;
+            var description=document.getElementById("description-"+id).value;
+            var published=document.getElementById("published-"+id).checked;
+            var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        if(this.responseText=="successful"){
+            location.reload();
+        }else{
+            alert("error");
+        }
+    }
+  };
+  xhttp.open("POST", "/Admin/Calendar/Update", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("id="+id+"&date="+date+"&name"+name+"&description="+description+"&published="+published+"&CSRF=asdfghjklkjhgfdsasdfghjkjhgfdfghgfdfg1232");
+        }
     </script>
 </body>
 </html>
