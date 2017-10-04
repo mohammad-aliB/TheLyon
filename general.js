@@ -114,6 +114,7 @@ dispatcher.PostRequest('/Admin/Calendar/Update', function(req,res){
 });
 dispatcher.GetRequest('/Calendar/*/*',function(req,res){
     year=0;
+    month=0;
     if(req.url.includes("2017")){
         year=2017;
     }else if(req.url.includes("2018")){
@@ -214,7 +215,7 @@ dispatcher.GetRequest('/Calendar/*/*',function(req,res){
     }else{
         res.end("error");
     }
-    if(month){//a year must exist for a month to so essentially checking for both here
+    if(month !=0){//a year must exist for a month to so essentially checking for both here
         var firstDay = new Date(year + "-" + month + "-01").getDay()//0  is sunday and 6 is saturday
         var numberOfDays = new Date(year,(month+1), 0).getDate();
         calendar.find({"date":{$gte:minimum, $lt:maximum}}).sort({date: 1}).toArray(function(err, events) {
