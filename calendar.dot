@@ -38,7 +38,7 @@
           };
           xhttp.open("POST", "/Admin/Calendar/Update", true);
           xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-          xhttp.send("id="+id+"&date="+date+"&name"+name+"&description="+description+"&published="+published+"&CSRF=asdfghjklkjhgfdsasdfghjkjhgfdfghgfdfg1232");
+          xhttp.send("id="+id+"&date="+date+"&name="+name+"&description="+description+"&published="+published+"&CSRF=asdfghjklkjhgfdsasdfghjkjhgfdfghgfdfg1232");
         }
     </script>
 </body>
