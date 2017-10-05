@@ -120,7 +120,9 @@
         {{? dayOfWeekCount==0}}
             <tr>
             {{?? dayOfWeekCount==6}}
+                {{dayOfWeekCount=0;}}
                 </tr>
+                }
             {{??}}
         {{?}}
     {{ dayCount++;dayOfWeekCount++;} }}
