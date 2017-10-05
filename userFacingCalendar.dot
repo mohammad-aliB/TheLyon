@@ -96,7 +96,7 @@
         <td>
             <span class="number">{{=dayCount}}</span>
             <ul>
-        {{for(var y=eventsPointer;y<=it.events.length;y++){ }}
+        {{for(var y=eventsPointer;y<it.events.length;y++){ }}
             {{y}}
 
         {{ } }}
