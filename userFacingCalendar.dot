@@ -112,7 +112,7 @@
                     </span> 
                 </li>
             {{??}}
-            {{eventsPointer++}}
+            {{eventsPointer++;}}
             {{?}}
         {{ } }}
         </ul>
