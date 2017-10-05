@@ -93,6 +93,13 @@
     {{ dayOfWeekCount++;} }}
 
     {{for(x=0;x<=it.numberOfDays;x++){ }}
+        {{? dayOfWeekCount==6}}
+            </tr>
+            {{dayOfWeekCount=0;}}
+        {{?}}
+        {{? dayOfWeekCount==0}}
+            <tr>            
+        {{?}}
         <td>
             <span class="number">{{=dayCount}}</span>
             <ul>
@@ -117,14 +124,6 @@
         {{ } }}
         </ul>
         </td>
-        {{? dayOfWeekCount==0}}
-            <tr>
-            {{?? dayOfWeekCount==6}}
-                {{dayOfWeekCount=0;}}
-                </tr>
-                }
-            {{??}}
-        {{?}}
     {{ dayCount++;dayOfWeekCount++;} }}
         
 
