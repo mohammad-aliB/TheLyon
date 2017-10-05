@@ -116,7 +116,7 @@ body,html{
         height:200px;
         width:50%;
         float:right;
-        position: relative;
+        position: inherit;
         border-right:1px solid black;
         border-top:1px solid black;
         border-bottom:1px solid black;
