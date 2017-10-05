@@ -89,24 +89,7 @@
         </td>
 
     {{ dayOfWeekCount++;} }}
-    {{~it.events :event:index}}
-        {{if(event.date.getDate()==dayCount){ }}
 
-        {{ }else{dayOfWeekCount++;dayCount++;
-    </ul>
-    </td>
-        <td>
-            <span class="number">{{=dayCount+1}}</span>  
-            <ul>
-        } }}
-        {{if(dayOfWeekCount==0){}}
-            <tr>
-        {{ }else if(dayOfWeekCount==6){ }}
-            </tr>
-        {{ }}}
-
-        {{ } }}
-    {{~}}
 
 <!--     <tr>
         <td>
