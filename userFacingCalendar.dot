@@ -81,7 +81,7 @@
         <th>Saturday</th>
     </tr>
     {{var dayOfWeekCount = 0;}}
-    {{var dayCount = 1;}}
+
     {{var eventsPointer=0;}}
 {{? it.firstDay>0}}
 <tr>
@@ -94,7 +94,7 @@
     {{ dayOfWeekCount++;} }}
 {{?}}
 
-    {{for(x=0;x<=it.numberOfDays;x++){ }}
+    {{for(dayCount=1;dayCount<=it.numberOfDays;dayCount++){ }}
         {{? dayOfWeekCount==7}}
             </tr>
             {{dayOfWeekCount=0;}}
@@ -126,7 +126,7 @@
         {{ } }}
         </ul>
         </td>
-    {{ dayCount++;dayOfWeekCount++;} }}
+    {{dayOfWeekCount++;} }}
         
 
 
