@@ -307,7 +307,7 @@ body,html{
             <li class="date">{{=it.currentDate||'no date here'}}</li>
             <li class="event"><a href="#">P.a day</a></li>
         </ul>
-        <a href="{{=it.calanderURL}}" id="view-calander">View calander</a>
+        <a href="{{=it.calendarURL}}" id="view-calander">View calander</a>
     </div>
   </div>
 
