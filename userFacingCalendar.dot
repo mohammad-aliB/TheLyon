@@ -97,7 +97,6 @@
             <span class="number">{{=dayCount}}</span>
             <ul>
         {{for(y=eventsPointer;y<=it.events.length;y++){ }}
-            aaaaaaa {{y}}
 
         {{ } }}
         </ul>
