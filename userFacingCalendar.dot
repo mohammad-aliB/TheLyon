@@ -65,6 +65,9 @@
             width:90%;
             margin:0 auto;
         }
+        .calendarPadding{
+            display:none;
+        }
     }
 </style>
 </head>
@@ -86,7 +89,7 @@
 {{? it.firstDay>0}}
 <tr>
     {{for(x=0;x<it.firstDay;x++){ }}
-        <td>
+        <td class="calendarPadding">
         <span class="number"></span>
         <ul>
         </ul>
