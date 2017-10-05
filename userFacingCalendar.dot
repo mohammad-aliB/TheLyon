@@ -69,7 +69,7 @@
 </style>
 </head>
 <body>
-    <div id="calendar-title"><a href="/Calendar{{=it.lastMonth}}"><</a> {{=it.year}} {{=it.monthName||''}}{{=it.events[0].date.getDate()}} <a href="/Calendar{{=it.nextMonth}}">></a></div>
+    <div id="calendar-title"><a href="/Calendar{{=it.lastMonth}}"><</a> {{=it.year}} {{=it.monthName||''}} <a href="/Calendar{{=it.nextMonth}}">></a></div>
 <table>
     <tr>
         <th>Sunday</th>
@@ -120,8 +120,6 @@
                         </span>
                     </span> 
                 </li>
-            {{??}}
-            {{eventsPointer++;}}
             {{?}}
         {{ } }}
         </ul>
