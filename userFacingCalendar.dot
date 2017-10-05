@@ -83,16 +83,16 @@
     {{var dayOfWeekCount = 0;}}
     {{var dayCount = 0;}}
     {{var eventsPointer=0;}}
-
+{{? it.firstDay>0}}
+<tr>
     {{for(x=0;x<it.firstDay;x++){ }}
-        <tr>
         <td>
         <span class="number"></span>
         <ul>
         </ul>
         </td>
-
     {{ dayOfWeekCount++;} }}
+{{?}}
 
     {{for(x=0;x<=it.numberOfDays;x++){ }}
         {{? dayOfWeekCount==7}}
