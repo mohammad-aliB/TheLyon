@@ -220,7 +220,7 @@ dispatcher.GetRequest('/Calendar/*/*',function(req,res){
         var numberOfDays = new Date(year,(month+1), 0).getDate();
         calendar.find({"published":"true","date":{$gte:minimum, $lt:maximum}}).sort({date: 1}).toArray(function(err, events) {
             if(!err){
-                    res.end(dots.userFacingCalendar({"month":month,"firstDay":firstDay,"events":events}));
+                    res.end(dots.userFacingCalendar({"month":month,"firstDay":firstDay,"events":events,"numberOfDays":numberOfDays}));
 
             }
                         //console.log(events);
