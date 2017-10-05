@@ -82,14 +82,31 @@
     </tr>
     {{var dayOfWeekCount = 0;}}
     {{var dayCount = 0;}}
-    {{for(dayCount<it.firstDay;dayCount++){ }}
+    {{for(x=0;x<it.firstDay;x++){ }}
         <tr>
         <td>
         <span class="number"></span>
         </td>
 
     {{ dayOfWeekCount++;} }}
+    {{~it.events :event:index}}
+        {{if(event.date.getDate()==dayCount){ }}
 
+        {{ }else{dayOfWeekCount++;dayCount++;
+    </ul>
+    </td>
+        <td>
+            <span class="number">{{=dayCount+1}}</span>  
+            <ul>
+        } }}
+        {{if(dayOfWeekCount==0){ }}
+            <tr>
+        {{ }else if(dayOfWeekCount==6){ }}
+            </tr>
+        {{ }}}
+
+        {{ } }}
+    {{~}}
 
 <!--     <tr>
         <td>
