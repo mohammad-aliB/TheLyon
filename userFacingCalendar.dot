@@ -97,7 +97,7 @@
             <span class="number">{{=dayCount}}</span>
             <ul>
         {{ for(y=eventsPointer;y<=it.events.length;y++){ }}
-            {{? new Date(it.events[y].date).getDate()==dayCount}}
+            {{? it.events[y].date.getDate()==dayCount}}
                 {{eventsPointer=y;}}
                 <li>
                     <span class="event-text">
