@@ -229,6 +229,7 @@ body,html{
             }
             #schedule #view-calander{
                 position: inherit;
+                display:block;
             }
             #navbar{
                 height:150px;
