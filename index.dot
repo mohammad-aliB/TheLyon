@@ -116,7 +116,7 @@ body,html{
         height:200px;
         width:50%;
         float:right;
-        position: inherit;
+        position: relative;
         border-right:1px solid black;
         border-top:1px solid black;
         border-bottom:1px solid black;
@@ -222,7 +222,7 @@ body,html{
                 height:auto;
                 float:none;
                 width:100%;
-                position: relative;
+                position: inherit;
                 border-left:1px solid black;
         z-index: -1;/* to prevent overlap with mobile navbar*/
             }
