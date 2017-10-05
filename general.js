@@ -217,7 +217,7 @@ dispatcher.GetRequest('/Calendar/*/*',function(req,res){
     }
     if(month !=0){//a year must exist for a month to so essentially checking for both here
         var firstDay = new Date(year + "-" + month + "-01").getDay()//0  is sunday and 6 is saturday
-        var numberOfDays = new Date(year,(month+1), 0).getDate();
+        var numberOfDays = new Date(year,(month), 0).getDate();
         calendar.find({"published":"true","date":{$gte:minimum, $lt:maximum}}).sort({date: 1}).toArray(function(err, events) {
             if(!err){
                     res.end(dots.userFacingCalendar({"month":month,"firstDay":firstDay,"events":events,"numberOfDays":numberOfDays}));
