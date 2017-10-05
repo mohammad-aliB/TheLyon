@@ -93,37 +93,7 @@
     {{ dayOfWeekCount++;} }}
 
     {{for(x=0;x<=it.numberOfDays;x++){ }}
-        <td>
-            <span class="number">{{=dayCount}}</span>
-            <ul>
-        {{for(y=eventsPointer;y<=it.events.length;y++){ }}
-            {{? it.events[y].date.getDate()==dayCount}}
-                {{eventsPointer=y}}
-                <li>
-                    <span class="event-text">
-                        {{=it.events[y].name}}
-                        <span class="hover-text">
-                            <span>
-                                <span class="hover-event-text">{{=it.events[y].name||''}}</span> 
-                                <span class="hover-event-date">starts: {{it.events[y].date||''}}</span>
-                                <span class="hover-event-description">{{it.events[y].description||''}}</span>
-                            </span>
-                        </span>
-                    </span> 
-                </li>
-            {{??}}
-            {{eventsPointer++}}
 
-            {{?}}
-        {{ } }}
-        </ul>
-        </td>
-        {{? dayOfWeekCount==0}}
-            <tr>
-            {{?? dayOfWeekCount==6}}
-                </tr>
-            {{??}}
-        {{?}}
     {{ dayCount++;dayOfWeekCount++;} }}
         
 
