@@ -94,7 +94,7 @@
     {{ dayOfWeekCount++;} }}
 {{?}}
 
-    {{for(dayCount=1;dayCount<=it.numberOfDays;dayCount++){ }}
+    {{for(dayCount=1;dayCount<it.numberOfDays;dayCount++){ }}
         {{? dayOfWeekCount==7}}
             </tr>
             {{dayOfWeekCount=0;}}
