@@ -25,7 +25,7 @@ dispatcher.GetRequest('/',function(req,res){
         if(!result){
             result=[];
         }
-        if(test.getMonth()==1){month="January"}else if(test.getMonth()==2){month="Febuary"}else if(test.getMonth()==3){month="March"}else if(test.getMonth()==4){month="April"}else if(test.getMonth()==5){month="May"}else if(test.getMonth()==6){month="June"}else if(test.getMonth()==7){month="July"}else if(test.getMonth()==8){month="Augest"}else if(test.getMonth()==9){month="September"}else if(test.getMonth()==10){month="October"}else if(test.getMonth()==11){month="November"}else{month="December"}
+        if(test.getMonth()==0){month="January"}else if(test.getMonth()==1){month="Febuary"}else if(test.getMonth()==2){month="March"}else if(test.getMonth()==3){month="April"}else if(test.getMonth()==4){month="May"}else if(test.getMonth()==5){month="June"}else if(test.getMonth()==6){month="July"}else if(test.getMonth()==7){month="Augest"}else if(test.getMonth()==8){month="September"}else if(test.getMonth()==9){month="October"}else if(test.getMonth()==10){month="November"}else{month="December"}
     var calendarURL="/Calendar/"+test.getFullYear()+"/"+month;
         res.end(dots.index({"currentDate":test,"day":result["day"],"calendarURL":calendarURL})); 
     });
