@@ -20,11 +20,14 @@ dispatcher.GetRequest('/',function(req,res){
    // testB=new Date();
     //testB=testB..setTime(testB.getTime() +  (1 * 24 * 60 * 60 * 1000));
    //console.log(testB)
+
     schoolDay.findOne( {"date": test},function(error,result){
         if(!result){
             result=[];
         }
-        res.end(dots.index({"currentDate":test,"day":result["day"]})); 
+    var d= new Date();
+    var calendarURL="/Calendar/"+d.getYear()+"/"+d.getMonth();
+        res.end(dots.index({"currentDate":test,"day":result["day"],"calendarURL":calendarURL})); 
     });
 });
 dispatcher.GetRequest('/Login',function(req,res){

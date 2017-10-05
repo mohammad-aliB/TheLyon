@@ -288,7 +288,7 @@ body,html{
         <li><a href="#"><span>memes</span></a></li>
         <li><a href="#"><span>NEWS</span></a></li>
         <li><a href="#"><span>sports</span></a></li>
-        <li><a href="#"><span>staff</span></a></li>
+        <li><a href="{{=it.calendarURL}}"><span>Calendar</span></a></li>
         <li><a href="/Admin"><span>Admin</span></a></li>
       </ul>
       <a href="#" id="navbar-mobile" onclick="mobileNavDropDown()">&#9776;</a>
@@ -307,7 +307,7 @@ body,html{
             <li class="date">{{=it.currentDate||'no date here'}}</li>
             <li class="event"><a href="#">P.a day</a></li>
         </ul>
-        <a href="/Calendar/2017/Augest" id="view-calander">View calander</a>
+        <a href="{{=it.calanderURL}}" id="view-calander">View calander</a>
     </div>
   </div>
 
