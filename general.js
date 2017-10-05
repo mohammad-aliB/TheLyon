@@ -220,7 +220,7 @@ dispatcher.GetRequest('/Calendar/*/*',function(req,res){
         var numberOfDays = new Date(year,(month), 0).getDate();
         calendar.find({"published":"true","date":{$gte:minimum, $lt:maximum}}).sort({date: 1}).toArray(function(err, events) {
             if(!err){
-                    res.end(dots.userFacingCalendar({"year":year,"lastmonth":lastMonth,"nextMonth":nextMonth,"firstDay":firstDay,"events":events,"numberOfDays":numberOfDays,"monthName":monthName}));
+                    res.end(dots.userFacingCalendar({"year":year,"lastMonth":lastMonth,"nextMonth":nextMonth,"firstDay":firstDay,"events":events,"numberOfDays":numberOfDays,"monthName":monthName}));
 
             }
                         //console.log(events);
