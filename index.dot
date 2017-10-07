@@ -301,12 +301,18 @@ body,html{
     </div>
     <div id="schedule">
         <ul>
-            <li class="date">Today</li>
-            <li class="event"><a href="#">get memes</a></li>
-            <li class="event"><a href="#">sell memes</a></li>
-            <li class="event"><a href="#">late start</a></li>
-            <li class="date">{{=it.currentDate||'no date here'}}</li>
-            <li class="event"><a href="#">P.a day</a></li>
+
+        {{date=new Date()}}
+    {{for(x=0;x<it.calendarEvents.length();x++){ }}
+        {{? date.getDate() != it.calendarEvents[x].date.getDate()
+      || date.getMonth() != it.calendarEvents[x].date.getMonth()
+      || date.getFullYear() != it.calendarEvents[x].date.getFullYear();}}
+            <li class="event"><a href="#">{{it.calendarEvents[x].title}}</a></li>
+      {{??}}
+        <li class="date">{{=it.calendarEvents[x].date.toString('dddd, d MMMM yyyy at HH:mm:ss').slice(0, 24)}}</li>
+        {{date=it.calendarEvents[x].date}}
+      {{?}}
+    {{ } }}
         </ul>
         <a href="{{=it.calendarURL}}" id="view-calander">View calander</a>
     </div>

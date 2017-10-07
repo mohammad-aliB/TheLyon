@@ -167,7 +167,7 @@
                         <span class="hover-text">
                             <span>
                                 <span class="hover-event-text" id="title-{{=it.events[y].id}}">{{=it.events[y].name||''}}</span> 
-                                <span class="hover-event-date" id="date-{{=it.events[y].id}}">starts: {{=it.events[y].date.toLocaleString()||''}}</span>
+                                <span class="hover-event-date" id="date-{{=it.events[y].id}}">starts: {{=it.events[y].date.toString('dddd, d MMMM yyyy at HH:mm:ss').slice(0, 24)||''}}</span>
                                 <span class="hover-event-description" id="description-{{=it.events[y].id}}">{{=it.events[y].description||''}}</span>
                             </span>
                         </span>

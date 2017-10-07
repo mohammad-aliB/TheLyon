@@ -26,8 +26,12 @@ dispatcher.GetRequest('/',function(req,res){
             result=[];
         }
         if(test.getMonth()==0){month="January"}else if(test.getMonth()==1){month="Febuary"}else if(test.getMonth()==2){month="March"}else if(test.getMonth()==3){month="April"}else if(test.getMonth()==4){month="May"}else if(test.getMonth()==5){month="June"}else if(test.getMonth()==6){month="July"}else if(test.getMonth()==7){month="Augest"}else if(test.getMonth()==8){month="September"}else if(test.getMonth()==9){month="October"}else if(test.getMonth()==10){month="November"}else{month="December"}
-    var calendarURL="/Calendar/"+test.getFullYear()+"/"+month;
-        res.end(dots.index({"currentDate":test,"day":result["day"],"calendarURL":calendarURL})); 
+        var calendarURL="/Calendar/"+test.getFullYear()+"/"+month;
+        calendar.find({"published":"true","date":{$gte:new Date()}}).limit(7).sort({date: 1}).toArray(function(err, events) {
+            if(!err){
+                res.end(dots.index({"currentDate":test,"day":result["day"],"calendarURL":calendarURL,"calendarEvents":events})); 
+            }
+        });
     });
 });
 dispatcher.GetRequest('/Login',function(req,res){
