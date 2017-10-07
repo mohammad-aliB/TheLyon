@@ -79,7 +79,7 @@ dispatcher.GetRequest('/Admin/Calendar',function(req,res){
     }else{
         var cookies = cookie.parse(req.headers.cookie || '');
         if(cookies.sessionToken==sessionToken){
-            calendar.find({}).toArray(function(err, events) {
+            calendar.find({}).sort({"date":1}).toArray(function(err, events) {
                 if(!err){
                     //console.log(events);
                     //events=[];
