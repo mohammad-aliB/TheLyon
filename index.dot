@@ -312,7 +312,7 @@ body,html{
 
             <li class="event"><a href="/Calendar/{{=it.calendarEvents[x].date.getFullYear()}}/{{=month}}?ID={{=it.calendarEvents[x].id}}">{{=it.calendarEvents[x].name}}</a></li>
       {{??}}
-        <li class="date">{{=it.calendarEvents[x].date..toDateString()}}</li>
+        <li class="date">{{=it.calendarEvents[x].date.toDateString()}}</li>
         {{date=it.calendarEvents[x].date;}}
         <li class="event"><a href="/Calendar/{{=it.calendarEvents[x].date.getFullYear()}}/{{=month}}?ID={{=it.calendarEvents[x].id}}">{{=it.calendarEvents[x].name}}</a></li>
       {{?}}
