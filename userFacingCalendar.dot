@@ -1,7 +1,8 @@
 <html>
 <head>
 <style type="text/css">
-    table{
+td,th{display:block;float:left;width:100%}
+/*    table{
         border-collapse: collapse;
     }
     td, th {
@@ -73,7 +74,7 @@
     }
     #popup-background{
         position: fixed;
-        /* width: 30%; */
+         width: 30%; 
         /* height: 50%; */
         /* margin: auto; */
         top: 0;
@@ -144,7 +145,7 @@
         .event-text{
             font-size:150%;
         }
-    }
+    }*/
 </style>
 </head>
 <body>
