@@ -1,7 +1,6 @@
 <html>
 <head>
 <style type="text/css">
-td,th{display:block;float:left;width:100%}
     table{
         border-collapse: collapse;
     }
