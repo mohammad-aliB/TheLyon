@@ -28,15 +28,17 @@
             var published=document.getElementById("published-"+id).checked;
             var xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                if(this.responseText=="successful"){
-                    location.reload();
+            if (this.readyState == 4){}
+                if(this.status == 200) {
+                    if(this.responseText=="successful"){
+                        location.reload();
+                    }else{
+                        alert("error, pls login");
+                    }
                 }else{
-                    alert("error, pls login");
-                }
-            }else{
-                    alert("error, server likely down. pls refresh page");
-                }
+                        alert("error, server likely down. pls refresh page");
+                    }
+            }
           };
           xhttp.open("POST", "/Admin/Calendar/Update", true);
           xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
