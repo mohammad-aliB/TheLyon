@@ -9,6 +9,7 @@ var loginPassword="asdfewasds123231232e123"
 var sessionToken=0;
 var cookie = require('cookie');
 const crypto = require('crypto');
+var url = require('url')
 mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(err, db) {
     if(err) throw err;
     calendar=db.collection("calendar")
@@ -225,9 +226,11 @@ dispatcher.GetRequest('/Calendar/*/*',function(req,res){
     if(month !=0){//a year must exist for a month to so essentially checking for both here
         var firstDay = new Date(year + "-" + month + "-01").getDay()//0  is sunday and 6 is saturday
         var numberOfDays = new Date(year,(month), 0).getDate();
+       var query = url.parse(req.url,true).query;
+
         calendar.find({"published":"true","date":{$gte:minimum, $lt:maximum}}).sort({date: 1}).toArray(function(err, events) {
             if(!err){
-                    res.end(dots.userFacingCalendar({"year":year,"lastMonth":lastMonth,"nextMonth":nextMonth,"firstDay":firstDay,"events":events,"numberOfDays":numberOfDays,"monthName":monthName}));
+                    res.end(dots.userFacingCalendar({"idToOpen":query["ID"].replace(/[^a-zA-Z0-9]/g,""),year":year,"lastMonth":lastMonth,"nextMonth":nextMonth,"firstDay":firstDay,"events":events,"numberOfDays":numberOfDays,"monthName":monthName}));
 
             }
                         //console.log(events);

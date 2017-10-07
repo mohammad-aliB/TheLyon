@@ -310,11 +310,11 @@ body,html{
                 <li class="date">Today</li>
             {{?}}
 
-            <li class="event"><a href="/Calendar/{{=it.calendarEvents[x].date.getFullYear()}}/{{=month}}">{{=it.calendarEvents[x].name}}</a></li>
+            <li class="event"><a href="/Calendar/{{=it.calendarEvents[x].date.getFullYear()}}/{{=month}}?ID={{=it.calendarEvents[x].id}}">{{=it.calendarEvents[x].name}}</a></li>
       {{??}}
         <li class="date">{{=it.calendarEvents[x].date.toString('dddd, d MMMM yyyy at HH:mm:ss').slice(0, 24)}}</li>
         {{date=it.calendarEvents[x].date;}}
-        <li class="event"><a href="/Calendar/{{=it.calendarEvents[x].date.getFullYear()}}/{{=month}}">{{=it.calendarEvents[x].name}}</a></li>
+        <li class="event"><a href="/Calendar/{{=it.calendarEvents[x].date.getFullYear()}}/{{=month}}?ID={{=it.calendarEvents[x].id}}">{{=it.calendarEvents[x].name}}</a></li>
       {{?}}
     {{ } }}
         </ul>
