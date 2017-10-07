@@ -27,6 +27,7 @@
         text-align: right;
         background-color: #eaeaea;
         width: 100%;
+        font-size:150%;
         display: block;
         display:none;
     }
@@ -135,6 +136,12 @@
             top:0;
             left:0;
             position: fixed;
+            font-size:150%;
+        }
+        #popup-close{
+            margin-right:10%;
+        }
+        .event-text{
             font-size:150%;
         }
     }
