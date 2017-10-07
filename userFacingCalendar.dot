@@ -1,14 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Untitled Document</title>
 <style type="text/css">
-td,th{display:block;float:left;width:100%}
- </style>
 
+td{
+    border:1px solid #000;
+    background:red;
+}
+td{display:block;float:left;width:100%}
+</style>
+</head>
+
+<body>
 <table>
         <tr>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
         </tr>
         <tr>
                 <td>4</td>
@@ -21,29 +31,5 @@ td,th{display:block;float:left;width:100%}
                 <td>9</td>
         </tr>
 </table>
-
-
-<div id="popup">
-    <button id="popup-close" onclick="closePopup();">close</button>
-    <div id="popup-title"></div>
-    <div id="popup-date"></div>
-    Description:<br>
-    <div id="popup-description"></div>
-</div>
-<div id="popup-background" onclick="closePopup();"></div>
-<script type="text/javascript">
-    function openPopup(id){
-        document.getElementById("popup-title").innerHTML=document.getElementById("title-"+id).innerHTML;
-        document.getElementById("popup-date").innerHTML=document.getElementById("date-"+id).innerHTML;
-        document.getElementById("popup-description").innerHTML=document.getElementById("description-"+id).innerHTML;
-        document.getElementById("popup").style.display="block";
-        document.getElementById("popup-background").style.display="block";
-    }
-    function closePopup(){
-        document.getElementById("popup").style.display="none";
-        document.getElementById("popup-background").style.display="none";
-    }
-{{=it.idToOpen}}
-</script>
 </body>
 </html>
