@@ -78,9 +78,14 @@
     }
     #popup-close{
         float: right;
-        /* display: block; */
-        /* width: 100%; */
         margin-left: 100%;
+        /* border-radius: 0; */
+        border: 1px solid black;
+        background: white;
+        cursor: pointer;
+    }
+    #popup-close:hover{
+        border-bottom:2px solid black;
     }
     #popup-title{
             /* margin: 0 auto; */
@@ -89,6 +94,7 @@
     }
     #popup-date{
         padding-top: 10px;
+        padding-bottom:10px;
     }
     @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
         table{
@@ -173,9 +179,10 @@
     <button id="popup-close" onclick="closePopup();">close</button>
     <div id="popup-title"></div>
     <div id="popup-date"></div>
+    Description:<br>
     <div id="popup-description"></div>
 </div>
-<div id="popup-background"></div>
+<div id="popup-background" onclick="closePopup();"></div>
 <script type="text/javascript">
     function openPopup(id){
         document.getElementById("popup-title").innerHTML=document.getElementById("title-"+id).innerHTML;
