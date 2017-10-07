@@ -77,7 +77,18 @@
         display: none;
     }
     #popup-close{
-        float:right;
+        float: right;
+        /* display: block; */
+        /* width: 100%; */
+        margin-left: 100%;
+    }
+    #popup-title{
+            /* margin: 0 auto; */
+    width: 100%;
+    text-align: center;
+    }
+    #popup-date{
+        padding-top: 10px;
     }
     @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
         table{
@@ -146,7 +157,7 @@
                         <span class="hover-text">
                             <span>
                                 <span class="hover-event-text" id="title-{{=it.events[y].id}}">{{=it.events[y].name||''}}</span> 
-                                <span class="hover-event-date" id="date-{{=it.events[y].id}}">starts: {{=it.events[y].date||''}}</span>
+                                <span class="hover-event-date" id="date-{{=it.events[y].id}}">starts: {{=it.events[y].date.toLocaleString()||''}}</span>
                                 <span class="hover-event-description" id="description-{{=it.events[y].id}}">{{=it.events[y].description||''}}</span>
                             </span>
                         </span>
@@ -170,9 +181,12 @@
         document.getElementById("popup-title").innerHTML=document.getElementById("title-"+id).innerHTML;
         document.getElementById("popup-date").innerHTML=document.getElementById("date-"+id).innerHTML;
         document.getElementById("popup-description").innerHTML=document.getElementById("description-"+id).innerHTML;
-        document.getElementById("popup").style.display="block;"
-        document.getElementById("popup-background").style.display="block;"
-
+        document.getElementById("popup").style.display="block";
+        document.getElementById("popup-background").style.display="block";
+    }
+    function closePopup(){
+        document.getElementById("popup").style.display="none";
+        document.getElementById("popup-background").style.display="none";
     }
 </script>
 </body>
