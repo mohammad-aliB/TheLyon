@@ -303,19 +303,24 @@ body,html{
         <ul>
 
         {{date=new Date();}}
+        {{lineCount=0;}}
     {{for(x=0;x<it.calendarEvents.length;x++){ }}
+    {{? lineCount<10}}
         {{ test=it.calendarEvents[x].date;if(test.getMonth()==0){month="January"}else if(test.getMonth()==1){month="Febuary"}else if(test.getMonth()==2){month="March"}else if(test.getMonth()==3){month="April"}else if(test.getMonth()==4){month="May"}else if(test.getMonth()==5){month="June"}else if(test.getMonth()==6){month="July"}else if(test.getMonth()==7){month="Augest"}else if(test.getMonth()==8){month="September"}else if(test.getMonth()==9){month="October"}else if(test.getMonth()==10){month="November"}else{month="December"} }}
         {{? date.getDate() == it.calendarEvents[x].date.getDate() && date.getMonth() == it.calendarEvents[x].date.getMonth() && date.getFullYear() == it.calendarEvents[x].date.getFullYear()}}
             {{? x==0}}
+                {{lineCount++;}}
                 <li class="date">Today</li>
             {{?}}
-
+                {{lineCount++;}}
             <li class="event"><a href="/Calendar/{{=it.calendarEvents[x].date.getFullYear()}}/{{=month}}?ID={{=it.calendarEvents[x].id}}">{{=it.calendarEvents[x].name}}</a></li>
       {{??}}
+        {{lineCount+=2;}}
         <li class="date">{{=it.calendarEvents[x].date.toDateString()}}</li>
         {{date=it.calendarEvents[x].date;}}
         <li class="event"><a href="/Calendar/{{=it.calendarEvents[x].date.getFullYear()}}/{{=month}}?ID={{=it.calendarEvents[x].id}}">{{=it.calendarEvents[x].name}}</a></li>
       {{?}}
+    {{?}}
     {{ } }}
         </ul>
         <a href="{{=it.calendarURL}}" id="view-calander">View calander</a>
