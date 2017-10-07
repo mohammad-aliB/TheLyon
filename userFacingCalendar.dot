@@ -168,7 +168,7 @@
         {{?}}
         <td>
             <span class="number">{{=dayCount}}</span>
-            <span class="mobile-number">{{=new Date(it.year+" "+it.monthName).toDateString()}}</span>
+            <span class="mobile-number">{{=new Date(it.year+" "+it.monthName+" "+dayCount).toDateString()}}</span>
             <ul>
         {{ for(y=eventsPointer;y<it.events.length;y++){ }}
             {{? it.events[y].date.getDate()==dayCount}}
