@@ -140,7 +140,7 @@
 <tr>
     {{for(x=0;x<it.firstDay;x++){ }}
         <td class="calendarPadding">
-        <span class="number"></span>
+        <span class="number">&nbsp;</span>
         <ul>
         </ul>
         </td>
