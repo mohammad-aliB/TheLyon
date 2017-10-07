@@ -32,9 +32,11 @@
                 if(this.responseText=="successful"){
                     location.reload();
                 }else{
-                    alert("error");
+                    alert("error, pls login");
                 }
-            }
+            }else{
+                    alert("error, server likely down. pls refresh page");
+                }
           };
           xhttp.open("POST", "/Admin/Calendar/Update", true);
           xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
