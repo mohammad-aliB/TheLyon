@@ -232,6 +232,8 @@ dispatcher.GetRequest('/Calendar/*/*',function(req,res){
             if(!err){
                     if(query["ID"]&&query["ID"]==query["ID"].replace(/[^a-zA-Z0-9]/g,"")){
                         idToOpen="openPopup('"+query["ID"]+"');";
+                    }else{
+                        idToOpen="";
                     }
                     res.end(dots.userFacingCalendar({"idToOpen":idToOpen,"year":year,"lastMonth":lastMonth,"nextMonth":nextMonth,"firstDay":firstDay,"events":events,"numberOfDays":numberOfDays,"monthName":monthName}));
 
