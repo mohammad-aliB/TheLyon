@@ -302,13 +302,13 @@ body,html{
     <div id="schedule">
         <ul>
 
-        {{date=new Date()}}
+        {{date=new Date();}}
     {{for(x=0;x<it.calendarEvents.length();x++){ }}
         {{? date.getDate() != it.calendarEvents[x].date.getDate() || date.getMonth() != it.calendarEvents[x].date.getMonth() || date.getFullYear() != it.calendarEvents[x].date.getFullYear()}}
             <li class="event"><a href="#">{{=it.calendarEvents[x].title}}</a></li>
       {{??}}
         <li class="date">{{=it.calendarEvents[x].date.toString('dddd, d MMMM yyyy at HH:mm:ss').slice(0, 24)}}</li>
-        {{date=it.calendarEvents[x].date}}
+        {{date=it.calendarEvents[x].date;}}
       {{?}}
     {{ } }}
         </ul>
