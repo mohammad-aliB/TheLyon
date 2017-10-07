@@ -304,7 +304,7 @@ body,html{
 
         {{date=new Date();}}
     {{for(x=0;x<it.calendarEvents.length;x++){ }}
-        {{? date.getDate() != it.calendarEvents[x].date.getDate() || date.getMonth() != it.calendarEvents[x].date.getMonth() || date.getFullYear() != it.calendarEvents[x].date.getFullYear()}}
+        {{? date.getDate() == it.calendarEvents[x].date.getDate() && date.getMonth() == it.calendarEvents[x].date.getMonth() && date.getFullYear() == it.calendarEvents[x].date.getFullYear()}}
             {{? x==0}}
                 <li class="date">Today</li>
             {{?}}

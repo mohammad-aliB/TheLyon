@@ -29,7 +29,6 @@ dispatcher.GetRequest('/',function(req,res){
         var calendarURL="/Calendar/"+test.getFullYear()+"/"+month;
         calendar.find({"published":"true","date":{$gte:new Date()}}).limit(7).sort({date: 1}).toArray(function(err, events) {
             if(!err){
-                console.log(events);
                 res.end(dots.index({"currentDate":test,"day":result["day"],"calendarURL":calendarURL,"calendarEvents":events})); 
             }
         });
