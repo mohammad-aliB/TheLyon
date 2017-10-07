@@ -83,11 +83,15 @@
         border: 1px solid black;
         background: white;
         cursor: pointer;
+        height:30px;
+        width:60px;
     }
     #popup-close:hover{
         border-bottom:2px solid black;
     }
     #popup-title{
+        padding-top:31px;
+        font-size:130%;
             /* margin: 0 auto; */
     width: 100%;
     text-align: center;
