@@ -60,7 +60,8 @@
         background-color: white;
         z-index: 2;
         padding: 10px;
-        
+        display:none;
+
     }
     #popup-background{
         position: fixed;
@@ -73,6 +74,10 @@
         width: 100%;
         height: 100%;
         opacity: .3;
+        display: none;
+    }
+    #popup-close{
+        float:right;
     }
     @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
         table{
@@ -136,13 +141,13 @@
             {{? it.events[y].date.getDate()==dayCount}}
                 {{eventsPointer=y;}}
                 <li>
-                    <span class="event-text">
+                    <span class="event-text" onclick="openPopup('{{=it.events[y].id}}');">
                         {{=it.events[y].name}}
                         <span class="hover-text">
                             <span>
-                                <span class="hover-event-text">{{=it.events[y].name||''}}</span> 
-                                <span class="hover-event-date">starts: {{=it.events[y].date||''}}</span>
-                                <span class="hover-event-description">{{=it.events[y].description||''}}</span>
+                                <span class="hover-event-text" id="title-{{=it.events[y].id}}">{{=it.events[y].name||''}}</span> 
+                                <span class="hover-event-date" id="date-{{=it.events[y].id}}">starts: {{=it.events[y].date||''}}</span>
+                                <span class="hover-event-description" id="description-{{=it.events[y].id}}">{{=it.events[y].description||''}}</span>
                             </span>
                         </span>
                     </span> 
@@ -160,5 +165,15 @@
     <div id="popup-description"></div>
 </div>
 <div id="popup-background"></div>
+<script type="text/javascript">
+    function openPopup(id){
+        document.getElementById("popup-title").innerHTML=document.getElementById("title-"+id).innerHTML;
+        document.getElementById("popup-date").innerHTML=document.getElementById("date-"+id).innerHTML;
+        document.getElementById("popup-description").innerHTML=document.getElementById("description-"+id).innerHTML;
+        document.getElementById("popup").style.display="block;"
+        document.getElementById("popup-background").style.display="block;"
+
+    }
+</script>
 </body>
 </html>
