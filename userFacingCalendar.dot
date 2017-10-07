@@ -24,6 +24,10 @@
         display: block;
     }
     .mobile-number{
+        text-align: right;
+        background-color: #eaeaea;
+        width: 100%;
+        display: block;
         display:none;
     }
     .event-text {
@@ -107,6 +111,7 @@
         .mobile-number{
             display: block;
         }
+        .number{display:none;}
         table{
             width:100%;
         }
@@ -146,7 +151,7 @@
 <tr>
     {{for(x=0;x<it.firstDay;x++){ }}
         <td class="calendarPadding">
-        <span class="number">&nbsp;</span>
+        <span class="number mobile-number">&nbsp;</span>
         <ul>
         </ul>
         </td>
