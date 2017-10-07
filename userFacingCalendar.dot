@@ -23,6 +23,9 @@
         width: 100%;
         display: block;
     }
+    .mobile-number{
+        display:none;
+    }
     .event-text {
         position: relative;
         display: inline-block;
@@ -101,6 +104,9 @@
         padding-bottom:10px;
     }
     @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
+        .mobile-number{
+            display: block;
+        }
         table{
             width:100%;
         }
@@ -157,6 +163,7 @@
         {{?}}
         <td>
             <span class="number">{{=dayCount}}</span>
+            <span class="mobile-number">{{new Date(it.year+" "+it.monthName).toDateString()}}</span>
             <ul>
         {{ for(y=eventsPointer;y<it.events.length;y++){ }}
             {{? it.events[y].date.getDate()==dayCount}}
