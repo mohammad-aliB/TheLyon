@@ -303,7 +303,7 @@ body,html{
         <ul>
 
         {{date=new Date();}}
-    {{for(x=0;x<it.calendarEvents.length();x++){ }}
+    {{for(x=0;x<it.calendarEvents.length;x++){ }}
         {{? date.getDate() != it.calendarEvents[x].date.getDate() || date.getMonth() != it.calendarEvents[x].date.getMonth() || date.getFullYear() != it.calendarEvents[x].date.getFullYear()}}
             <li class="event"><a href="#">{{=it.calendarEvents[x].title}}</a></li>
       {{??}}
