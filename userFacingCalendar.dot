@@ -199,7 +199,7 @@
         document.getElementById("popup").style.display="none";
         document.getElementById("popup-background").style.display="none";
     }
-    openPopup({{=it.idToOpen}});
+{{=it.idToOpen||''}}
 </script>
 </body>
 </html>

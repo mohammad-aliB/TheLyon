@@ -230,7 +230,11 @@ dispatcher.GetRequest('/Calendar/*/*',function(req,res){
 
         calendar.find({"published":"true","date":{$gte:minimum, $lt:maximum}}).sort({date: 1}).toArray(function(err, events) {
             if(!err){
-                    res.end(dots.userFacingCalendar({"idToOpen":query["ID"].replace(/[^a-zA-Z0-9]/g,""),year":year,"lastMonth":lastMonth,"nextMonth":nextMonth,"firstDay":firstDay,"events":events,"numberOfDays":numberOfDays,"monthName":monthName}));
+                    if(query["ID"]&&query["ID"]==query["ID"].replace(/[^a-zA-Z0-9]/g,"")){
+
+                        idToOpen="openPopup('"+query["ID"]+"');";
+                    }
+                    res.end(dots.userFacingCalendar({"idToOpen":idToOpen,year":year,"lastMonth":lastMonth,"nextMonth":nextMonth,"firstDay":firstDay,"events":events,"numberOfDays":numberOfDays,"monthName":monthName}));
 
             }
                         //console.log(events);
