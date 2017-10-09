@@ -220,6 +220,7 @@ body,html{
             #day{
                 float:none;
                 width:100%;
+                height:250px;
             }
             #schedule{
                 height:auto;
