@@ -197,7 +197,7 @@ body,html{
     }
     @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
     #calendar-title span{
-    display: inherit;
+    display: initial;
     }
 
          #navbar{
