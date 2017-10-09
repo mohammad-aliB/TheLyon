@@ -67,6 +67,9 @@ body,html{
         display:none;
     }
     table{
+        width:100%;
+            max-width:960px;
+            margin: 0 auto;
         border-collapse: collapse;
     }
     td, th {
@@ -173,6 +176,11 @@ body,html{
         padding-top: 10px;
         padding-bottom:10px;
     }
+    #calendar-title{
+        width:100%;
+        max-width:960px;
+        margin:0 auto;
+    }
     @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
          #navbar{
                 height:150px;
@@ -222,7 +230,6 @@ body,html{
         .number{display:none;}
         table{
             width:100%;
-            margin: 0 auto;
         }
         .hover-text{
             display:none;
