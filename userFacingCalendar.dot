@@ -284,7 +284,7 @@ body,html{
 </style>
 </head>
 <body>
-    <a id="logo" href="/"><img style="width: 100%;" src="/Static/logo.jpeg"></a>
+    <div id="logo" ><a href="/" style="width:100%;height:100%;"><img style="width: 100%;" src="/Static/logo.jpeg"></a></div>
   <div id="navbar">
       <ul id="navbar-ul" class="navbar-ul">
         <li><a href="#" id="navbar-mobile-close" onclick="mobileNavDropDown()"><span>X</span></a></li>
