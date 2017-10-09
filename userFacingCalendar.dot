@@ -183,6 +183,10 @@ body,html{
         text-align: center;
         font-size:50px;
     }
+    #calendar-title span{
+        width: 400px;
+        display: inline-block;
+    }
     #calendar-title a{
         text-decoration: none;
         color:black;
@@ -294,7 +298,7 @@ body,html{
 
 
 
-    <div id="calendar-title"><a href="/Calendar{{=it.lastMonth}}"><</a> {{=it.year}} {{=it.monthName||''}} <a href="/Calendar{{=it.nextMonth}}">></a></div>
+    <div id="calendar-title"><a href="/Calendar{{=it.lastMonth}}"><</a><span>{{=it.year}} {{=it.monthName||''}}</span><a href="/Calendar{{=it.nextMonth}}">></a></div>
 <table>
     <tr>
         <th>Sunday</th>
