@@ -4,6 +4,68 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Untitled Document</title>
 <style type="text/css">
+body,html{
+    margin:0;
+    padding:0;
+}
+#logo{
+    height: 200px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+    #navbar{
+        width:100%;
+        height:50px;
+        /*background-color: grey;*/
+        border-bottom:1px solid black;
+    }
+    #navbar ul{
+    display: table;
+    line-height: 50px;
+    margin: 0 auto;
+    padding: 0;
+    }
+    #navbar ul li{
+    display: inline-block;
+    height: 100%;
+    width: 50px;
+    /*text-align: center;*/
+    margin: 0 10px;
+
+    }
+    #navbar ul li a{
+        text-decoration: none;
+        color: grey;
+        width: 100%;
+        height: 100%;
+        /* margin: 0 10px; */
+        position: relative;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    #navbar ul li a:hover{
+    border-bottom: 2px solid black;
+    /*background-color: #e0e0e0;*/
+    }
+    #navbar-mobile{
+    font-size: 100px;
+    width: 10px;
+     display: none; 
+    /*margin: auto;*/
+    width: 100%;
+    height: auto;
+    /*line-height: 50px;*/
+    text-decoration: none;
+    text-align: center;
+    background: white;
+}
+
+    #navbar-ul li:first-child{
+        display:none;
+    }
     table{
         border-collapse: collapse;
     }
@@ -112,6 +174,48 @@
         padding-bottom:10px;
     }
     @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
+         #navbar{
+                height:150px;
+            }
+        #navbar ul{
+            display:block;
+            position:fixed;
+            width:100%;
+            height:100%;
+            top:-100%;
+            background-color: white;
+
+            transition-property: all;
+            transition-duration: .5s;
+        }
+        #navbar ul li{
+            margin:0;
+            width:100%;
+            height:10%;
+        }
+        #navbar ul li a{
+            margin:0;
+        }
+        #navbar ul li a span{
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size:300%;
+        }
+
+        #navbar-ul.open{
+            top:0;
+        }
+       #navbar-mobile{
+            /*top:0;*/
+    display: block;
+
+        }
+        #navbar-ul li:first-child{
+            display:inherit;
+        }
         .mobile-number{
             display: block;
         }
@@ -154,6 +258,25 @@
 </style>
 </head>
 <body>
+    <div id="logo"><img style="width: 100%;" src="/Static/logo.jpeg"></div>
+  <div id="navbar">
+      <ul id="navbar-ul" class="navbar-ul">
+        <li><a href="#" id="navbar-mobile-close" onclick="mobileNavDropDown()"><span>X</span></a></li>
+        <li><a href="#"><span>send</span></a></li>
+        <li><a href="#"><span>memes</span></a></li>
+        <li><a href="#"><span>NEWS</span></a></li>
+        <li><a href="#"><span>sports</span></a></li>
+        <li><a href="{{=it.calendarURL}}"><span>Calendar</span></a></li>
+        <li><a href="/Admin"><span>Admin</span></a></li>
+      </ul>
+      <a href="#" id="navbar-mobile" onclick="mobileNavDropDown()">&#9776;</a>
+  </div>
+
+   
+
+
+
+
     <div id="calendar-title"><a href="/Calendar{{=it.lastMonth}}"><</a> {{=it.year}} {{=it.monthName||''}} <a href="/Calendar{{=it.nextMonth}}">></a></div>
 <table>
     <tr>
@@ -224,6 +347,15 @@
 </div>
 <div id="popup-background" onclick="closePopup();"></div>
 <script type="text/javascript">
+    function mobileNavDropDown() {
+        var x = document.getElementById("navbar-ul");
+        if (x.className === "navbar-ul") {
+            x.className += " open";
+        } else {
+            x.className = "navbar-ul";
+
+        }
+    }
     function openPopup(id){
         document.getElementById("popup-title").innerHTML=document.getElementById("title-"+id).innerHTML;
         document.getElementById("popup-date").innerHTML=document.getElementById("date-"+id).innerHTML;
