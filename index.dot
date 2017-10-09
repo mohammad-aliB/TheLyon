@@ -132,12 +132,12 @@ body,html{
     }
     #schedule ul .date{
         background-color:grey;
-        height:auto;
+        height:40px;
         padding-left:10px;
     }
     #schedule ul .event{
         /*border-bottom:1px solid black;*/
-        height:auto;
+        height:40px;
     }
 
     #schedule ul .event a{
