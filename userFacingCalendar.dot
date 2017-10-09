@@ -184,7 +184,8 @@ body,html{
         font-size:50px;
     }
     #calendar-title span{
-        width: 400px;
+        
+        max-width: 400px;
         display: inline-block;
     }
     #calendar-title a{
