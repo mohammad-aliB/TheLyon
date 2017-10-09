@@ -132,12 +132,12 @@ body,html{
     }
     #schedule ul .date{
         background-color:grey;
-        height:40px;
+        height:auto;
         padding-left:10px;
     }
     #schedule ul .event{
         /*border-bottom:1px solid black;*/
-        height:40px;
+        height:auto;
     }
 
     #schedule ul .event a{
@@ -229,6 +229,10 @@ body,html{
                 position: inherit;
                 border-left:1px solid black;
         z-index: -1;/* to prevent overlap with mobile navbar*/
+            }
+            #schedule li{
+                    height:60px;
+                    font-size: 50px;
             }
             #schedule #view-calander{
                 position: inherit;
