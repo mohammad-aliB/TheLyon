@@ -79,7 +79,7 @@ body,html{
 
     #calendar{
         width:760px;
-        height:auto;
+        /*height:auto;*/
         /*border:1px solid black;*/
         margin:100px auto 0 auto;
         height:auto;
@@ -93,6 +93,7 @@ body,html{
         width:50%;
         float:left;
         border:1px solid black;
+        height:auto;
     }
     #day-text{
         top:0;
