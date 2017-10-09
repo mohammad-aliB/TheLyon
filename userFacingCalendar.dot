@@ -27,7 +27,7 @@
         display: block;
     }
     .mobile-number{
-        text-align: right;
+        text-align: center;
         background-color: #eaeaea;
         width: 100%;
         font-size:150%;
@@ -143,6 +143,7 @@
         }
         #popup-close{
             margin-right:10%;
+            font-size:150%;
         }
         .event-text{
             font-size:150%;
