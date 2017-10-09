@@ -180,6 +180,15 @@ body,html{
         width:100%;
         max-width:960px;
         margin:0 auto;
+        text-align: center;
+        font-size:50px;
+    }
+    #calendar-title a{
+        text-decoration: none;
+        color:black;
+    }
+    #calendar-title a:hover{
+        border-bottom:1px solid black;
     }
     @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
          #navbar{
