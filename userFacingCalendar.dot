@@ -144,6 +144,8 @@
         #popup-close{
             margin-right:10%;
             font-size:150%;
+            width:auto;
+            height:auto;
         }
         .event-text{
             font-size:150%;
