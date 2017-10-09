@@ -235,7 +235,10 @@ dispatcher.GetRequest('/Calendar/*/*',function(req,res){
                     }else{
                         idToOpen="";
                     }
-                    res.end(dots.userFacingCalendar({"idToOpen":idToOpen,"year":year,"lastMonth":lastMonth,"nextMonth":nextMonth,"firstDay":firstDay,"events":events,"numberOfDays":numberOfDays,"monthName":monthName}));
+                    test=new Date(calcTime(-4));
+                    if(test.getMonth()==0){month="January"}else if(test.getMonth()==1){month="Febuary"}else if(test.getMonth()==2){month="March"}else if(test.getMonth()==3){month="April"}else if(test.getMonth()==4){month="May"}else if(test.getMonth()==5){month="June"}else if(test.getMonth()==6){month="July"}else if(test.getMonth()==7){month="Augest"}else if(test.getMonth()==8){month="September"}else if(test.getMonth()==9){month="October"}else if(test.getMonth()==10){month="November"}else{month="December"}
+                    var calendarURL="/Calendar/"+test.getFullYear()+"/"+month;
+                    res.end(dots.userFacingCalendar({"calendarURL":calendarURL,"idToOpen":idToOpen,"year":year,"lastMonth":lastMonth,"nextMonth":nextMonth,"firstDay":firstDay,"events":events,"numberOfDays":numberOfDays,"monthName":monthName}));
 
             }
                         //console.log(events);
