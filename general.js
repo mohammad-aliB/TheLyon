@@ -14,6 +14,7 @@ mongodb.MongoClient.connect("mongodb://192.168.206.78:27017/TheLyon", function(e
     if(err) throw err;
     calendar=db.collection("calendar")
     schoolDay=db.collection("schoolDay")
+    articles=db.collection("articles")
 });
 dispatcher.staticDirectory('/Static','/TheLyon/TheLyon/staticFiles');
 dispatcher.GetRequest('/',function(req,res){
