@@ -1,0 +1,17 @@
+<html>
+<body>
+    <a href="#" onclick="/Admin/Article/Edit?ID={{=it.newArticleId}}">New Article</a>
+    <ul>
+        {{~it.articles :event:index}}
+
+            <li>
+                    Date: {{=event.date}}<br>
+                    Title:{{=event.title}}<br>
+                    Author:{{=event.name}}<br>
+                    <a href="/Admin/Article/Edit?ID={{=it.event.ID}}">Update</a>
+            </li><br><br>
+        {{~}}
+
+    </ul>
+</body>
+</html>

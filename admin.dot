@@ -2,5 +2,6 @@
 <body>
     <a href="/Logout">Logout</a><br>
     <a href="/Admin/Calendar">Calendar</a>
+    <a href="/Admin/Articles">Articles</a>
 </body>
 </html>

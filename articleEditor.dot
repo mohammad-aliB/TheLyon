@@ -1,0 +1,40 @@
+<html>
+<body>
+
+                    Date: <input type="text" id="date" name="date" value="{{=it.article.date}}"><br>
+                    Author: <input type="text" id="author" name="name" value="{{=it.article.name}}"><br>
+                    Title: <input type="text" id="title" name="Date" value="{{=it.article.description}}"><br>
+                    Summary: <input type="text" id="summary" name="Date" value="{{=it.article.summary}}"><br>
+                    Body: <input type="text" id="body" name="Date" value="{{=it.article.body}}"><br>
+                    Published: <input type="checkbox" id="published" name="published" value="published" {{? it.article.published=="true"}}checked{{?}}><br>
+                    <a href="#" onclick="updateEvents('{{=it.article.ID}}')">Update</a>
+
+
+    <script type="text/javascript">
+        function updateEvents(ID){
+            var date=document.getElementById("date").value;
+            var author=document.getElementById("author").value;
+            var summary=document.getElementById("summary").value;
+            var body=document.getElementById("body").value;
+            var published=document.getElementById("published").checked;
+            var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4){
+                if(this.status == 200) {
+                    if(this.responseText=="successful"){
+                        location.reload();
+                    }else{
+                        alert("error, pls login");
+                    }
+                }else{
+                        alert("error, server likely down. pls refresh page");
+                    }
+            }
+          };
+          xhttp.open("POST", "/Admin/Article/Update", true);
+          xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          xhttp.send("ID="+ID+"&date="+date+"&author="+author+"&summary="+summary+"&body="+body+"&published="+published+"&CSRF=2222asdfghjklkjhgfdsasdfghjkjhgfdfghgfdfg1232");
+        }
+    </script>
+</body>
+</html>

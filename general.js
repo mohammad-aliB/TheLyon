@@ -92,6 +92,62 @@ dispatcher.GetRequest('/Admin/Calendar',function(req,res){
         }
     }
 });
+dispatcher.GetRequest('/Admin/Articles',function(req,res){
+    if(sessionToken==0){
+        res.end("<html><body>pls <a href=\"/Login\">LOGIN</a></body></html>");
+    }else{
+        var cookies = cookie.parse(req.headers.cookie || '');
+        if(cookies.sessionToken==sessionToken){
+            articles.find({}).sort({"date":1}).toArray(function(err, articles) {
+                if(!err){
+                    crypto.randomBytes(48, function(err, buffer) {
+                        newArticleId = buffer.toString('hex');
+                    //console.log(events);
+                    //events=[];
+                    // for (var i = 0; i < eventResults.length; i++) {
+                    //     events.push(tagResult[i].tagID);
+                    // }
+                        res.end(dots.article({"articles":articles,"newArticleId":newArticleId}));
+                    });
+                }
+            });
+        }
+    }
+});
+dispatcher.GetRequest('/Admin/Article/Edit', function(req,res){
+    if(sessionToken==0){
+        res.end("<html><body>pls <a href=\"/Login\">LOGIN</a></body></html>");
+    }else{
+        var cookies = cookie.parse(req.headers.cookie || '');
+        if(cookies.sessionToken==sessionToken){
+            var query = url.parse(req.url,true).query;
+            if(query["ID"]&&query["ID"]==query["ID"].replace(/[^a-zA-Z0-9]/g,"")){
+                articles.findOne( {"ID": query["ID"]},function(error,article){
+                    if(!error ){
+                        res.end(dots.articleEditor({"article":article}));
+                    }
+                });
+            }
+        }
+    }
+});
+dispatcher.PostRequest('/Admin/Article/Update', function(req,res){
+    if(sessionToken==0){
+        res.end("<html><body>pls <a href=\"/Login\">LOGIN</a></body></html>");
+    }else{
+        var cookies = cookie.parse(req.headers.cookie || '');
+        if(cookies.sessionToken==sessionToken){
+            if(req.postData["CSRF"]=="2222asdfghjklkjhgfdsasdfghjkjhgfdfghgfdfg1232"){
+                    articles.update({"ID":req.postData["ID"]},{$set:{"ID":req.postData["ID"],"date":new Date(req.postData["date"]),"author":req.postData["author"],"summary":req.postData["summary"],"published":req.postData["published"],"URL":req.postData["URL"].replace(/[^a-zA-Z0-9_-]/g,"")}},{upsert:true},function(err, result) {
+                        if(!err){
+                          res.end("successful");
+                        }
+                    });
+                }
+            }
+        }
+    }
+});
 dispatcher.PostRequest('/Admin/Calendar/Update', function(req,res){
     if(sessionToken==0){
         res.end("<html><body>pls <a href=\"/Login\">LOGIN</a></body></html>");
@@ -118,7 +174,6 @@ dispatcher.PostRequest('/Admin/Calendar/Update', function(req,res){
             }
         }
     }
-
 });
 dispatcher.GetRequest('/Calendar/*/*',function(req,res){
     year=0;
