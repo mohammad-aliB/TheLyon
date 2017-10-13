@@ -127,6 +127,7 @@ dispatcher.GetRequest('/Admin/Article/Edit', function(req,res){
                     if(!error ){
                         if(!article){
                             article=[];
+                            article["ID"]=query["ID"];
                         }
                         res.end(dots.articleEditor({"article":article}));
                     }
