@@ -120,12 +120,16 @@
         border-bottom:1px solid blue;
     }
     #articles .title{
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
         display: inline-block;
         color:blue;
         /*border-bottom:1px solid black;*/
         font-size: 150%;
         width:100%;
-        margin-bottom: -5px;
+        margin-bottom: 10px;
+
     }
     #articles .date-author{
         list-style: none;
