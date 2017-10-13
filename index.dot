@@ -121,6 +121,7 @@
         /*text-decoration: underline;*/
     }
     #articles .title{
+        position: relative;
         color:blue;
         /*border-bottom:1px solid black;*/
         font-size: 150%;
