@@ -125,6 +125,9 @@ dispatcher.GetRequest('/Admin/Article/Edit', function(req,res){
             if(query["ID"]&&query["ID"]==query["ID"].replace(/[^a-zA-Z0-9]/g,"")){
                 articles.findOne( {"ID": query["ID"]},function(error,article){
                     if(!error ){
+                        if(!article){
+                            article=[];
+                        }
                         res.end(dots.articleEditor({"article":article}));
                     }
                 });

@@ -1,12 +1,12 @@
 <html>
 <body>
 
-                    URL: <input type="text" id="date" name="date" value="{{=it.article.URL}}"><br>
-                    Date: <input type="text" id="date" name="date" value="{{=it.article.date}}"><br>
-                    Author: <input type="text" id="author" name="name" value="{{=it.article.name}}"><br>
-                    Title: <input type="text" id="title" name="Date" value="{{=it.article.description}}"><br>
-                    Summary: <input type="text" id="summary" name="Date" value="{{=it.article.summary}}"><br>
-                    Body: <input type="text" id="body" name="Date" value="{{=it.article.body}}"><br>
+                    URL: <input type="text" id="date" name="date" value="{{=it.article.URL||''}}"><br>
+                    Date: <input type="text" id="date" name="date" value="{{=it.article.date||''}}"><br>
+                    Author: <input type="text" id="author" name="name" value="{{=it.article.name||''}}"><br>
+                    Title: <input type="text" id="title" name="Date" value="{{=it.article.description||''}}"><br>
+                    Summary: <input type="text" id="summary" name="Date" value="{{=it.article.summary||''}}"><br>
+                    Body: <input type="text" id="body" name="Date" value="{{=it.article.body||''}}"><br>
                     Published: <input type="checkbox" id="published" name="published" value="published" {{? it.article.published=="true"}}checked{{?}}><br>
                     <a href="#" onclick="updateEvents('{{=it.article.ID}}')">Update</a>
 
