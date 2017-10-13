@@ -223,6 +223,9 @@ body,html{
         text-decoration: none;
         color: white;
     }
+    #footer li a:hover{
+        border-bottom:1px solid white;
+    }
     @media only screen and (max-device-width:680px) (orientation : landscape), (orientation : portrait)   {
             #calendar{
                 /*height:400px;*/
