@@ -358,7 +358,7 @@ body,html{
         </li>
     </ul>
     <ul id="footer">
-
+        <li>Designed By:<a href="mailto:Mohammad-Ali@bandzar.com">Mohammad-Ali@bandzar.com</a></li>
     </ul>
 <script>
 function mobileNavDropDown() {
