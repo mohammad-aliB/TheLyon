@@ -116,6 +116,9 @@
     #articles a{
         text-decoration: none;
     }
+    #articles a:hover{
+        border-bottom:1px solid blue;
+    }
     #articles .title{
         display: inline-block;
         color:blue;
