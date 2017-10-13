@@ -117,15 +117,15 @@
         text-decoration: none;
     }
     #articles a:hover{
-        /*border-bottom:1px solid blue;*/
-        text-decoration: underline;
+        border-bottom:1px solid blue;
+        /*text-decoration: underline;*/
     }
     #articles .title{
         color:blue;
         /*border-bottom:1px solid black;*/
         font-size: 150%;
         width:100%;
-        margin-bottom: 10px;
+        margin-bottom: -5px;
 
     }
     #articles .date-author{
