@@ -1,12 +1,13 @@
 <html>
 <body>
 
-                    URL: <input type="text" id="URL" name="date" value="{{=it.article.URL||''}}"><br>
-                    Date: <input type="text" id="date" name="date" value="{{=it.article.date||''}}"><br>
-                    Author: <input type="text" id="author" name="name" value="{{=it.article.author||''}}"><br>
-                    Title: <input type="text" id="title" name="Date" value="{{=it.article.title||''}}"><br>
-                    Summary: <input type="text" id="summary" name="Date" value="{{=it.article.summary||''}}"><br>
-                    Body: <textarea id="body"{{=it.article.body||''}}></textarea><br>
+                    URL: <input type="text" id="URL" value="{{=it.article.URL||''}}"><br>
+                    Date: <input type="text" id="date" value="{{=it.article.date||''}}"><br>
+                    Author: <input type="text" id="author" value="{{=it.article.author||''}}"><br>
+                    Title: <input type="text" id="title" value="{{=it.article.title||''}}"><br>
+                    Summary: <input type="text" id="summary" value="{{=it.article.summary||''}}"><br>
+                    Category: <input type="text" id="category" value="{{=it.article.category||''}}"><br>
+                    Body: <textarea id="body">{{=it.article.body||''}}</textarea><br>
                     Published: <input type="checkbox" id="published" name="published" value="published" {{? it.article.published=="true"}}checked{{?}}><br>
                     <a href="#" onclick="updateEvents('{{=it.article.ID}}')">Update</a>
 
@@ -17,6 +18,7 @@
             var date=document.getElementById("date").value;
             var author=document.getElementById("author").value;
             var summary=document.getElementById("summary").value;
+            var category=document.getElementById("category").value;
             var body=document.getElementById("body").value;
             var published=document.getElementById("published").checked;
             var xhttp = new XMLHttpRequest();
@@ -35,7 +37,7 @@
           };
           xhttp.open("POST", "/Admin/Article/Update", true);
           xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-          xhttp.send("ID="+ID+"&date="+date+"&author="+author+"&summary="+summary+"&body="+body+"&published="+published+"&URL="+URL+"&CSRF=2222asdfghjklkjhgfdsasdfghjkjhgfdfghgfdfg1232");
+          xhttp.send("ID="+ID+"&date="+date+"&author="+author+"&summary="+summary+"&body="+body+"&published="+published+"&category="+category+"&URL="+URL+"&CSRF=2222asdfghjklkjhgfdsasdfghjkjhgfdfghgfdfg1232");
         }
     </script>
 </body>
