@@ -8,7 +8,7 @@
                     Date: {{=event.date}}<br>
                     Title:{{=event.title}}<br>
                     Author:{{=event.name}}<br>
-                    <a href="/Admin/Article/Edit?ID={{=it.event.ID}}">Update</a>
+                    <a href="/Admin/Article/Edit?ID={{=event.ID}}">Update</a>
             </li><br><br>
         {{~}}
 
