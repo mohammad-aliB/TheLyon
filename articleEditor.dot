@@ -1,6 +1,7 @@
 <html>
 <body>
 
+                    URL: <input type="text" id="date" name="date" value="{{=it.article.URL}}"><br>
                     Date: <input type="text" id="date" name="date" value="{{=it.article.date}}"><br>
                     Author: <input type="text" id="author" name="name" value="{{=it.article.name}}"><br>
                     Title: <input type="text" id="title" name="Date" value="{{=it.article.description}}"><br>
@@ -12,6 +13,7 @@
 
     <script type="text/javascript">
         function updateEvents(ID){
+            var URL=document.getElementById("URL").value;
             var date=document.getElementById("date").value;
             var author=document.getElementById("author").value;
             var summary=document.getElementById("summary").value;
@@ -33,7 +35,7 @@
           };
           xhttp.open("POST", "/Admin/Article/Update", true);
           xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-          xhttp.send("ID="+ID+"&date="+date+"&author="+author+"&summary="+summary+"&body="+body+"&published="+published+"&CSRF=2222asdfghjklkjhgfdsasdfghjkjhgfdfghgfdfg1232");
+          xhttp.send("ID="+ID+"&date="+date+"&author="+author+"&summary="+summary+"&body="+body+"&published="+published+"&URL="+URL+"&CSRF=2222asdfghjklkjhgfdsasdfghjkjhgfdfghgfdfg1232");
         }
     </script>
 </body>

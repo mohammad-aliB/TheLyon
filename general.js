@@ -138,12 +138,12 @@ dispatcher.PostRequest('/Admin/Article/Update', function(req,res){
         var cookies = cookie.parse(req.headers.cookie || '');
         if(cookies.sessionToken==sessionToken){
             if(req.postData["CSRF"]=="2222asdfghjklkjhgfdsasdfghjkjhgfdfghgfdfg1232"){
-                    articles.update({"ID":req.postData["ID"]},{$set:{"ID":req.postData["ID"],"date":new Date(req.postData["date"]),"author":req.postData["author"],"summary":req.postData["summary"],"published":req.postData["published"],"URL":req.postData["URL"].replace(/[^a-zA-Z0-9_-]/g,"")}},{upsert:true},function(err, result) {
-                        if(!err){
-                          res.end("successful");
-                        }
-                    });
-                }
+                var URL=req.postData["URL"].replace(/[^a-zA-Z0-9_-]/g,"");
+                articles.update({"ID":req.postData["ID"]},{$set:{"ID":req.postData["ID"],"date":new Date(req.postData["date"]),"author":req.postData["author"],"summary":req.postData["summary"],"published":req.postData["published"],"URL":URL}},{upsert:true},function(err, result) {
+                    if(!err){
+                      res.end("successful");
+                    }
+                });
             }
         }
     }
