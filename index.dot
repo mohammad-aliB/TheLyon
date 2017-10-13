@@ -46,7 +46,7 @@
     text-align: center;
     font-size: 200px;
     margin-top: -50px;
-    height:200px;
+    height:198px;
     /* padding: 0; */
     /* display: block; */
     }
