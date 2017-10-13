@@ -19,7 +19,7 @@
         padding:0;
         width: 100px;
     }
-    ul{
+    ul .content{
         min-height:100px;
         list-style:none;
         padding:0;
@@ -220,7 +220,7 @@
     {{for(x=0;x<it.firstDay;x++){ }}
         <td class="calendarPadding">
         <span class="number mobile-number">&nbsp;</span>
-        <ul>
+        <ul class="content">
         </ul>
         </td>
     {{ dayOfWeekCount++;} }}
@@ -237,7 +237,7 @@
         <td>
             <span class="number">{{=dayCount}}</span>
             <span class="mobile-number">{{=new Date(it.year+" "+it.monthName+" "+dayCount).toDateString()}}</span>
-            <ul>
+            <ul class="content">
         {{ for(y=eventsPointer;y<it.events.length;y++){ }}
             {{? it.events[y].date.getDate()==dayCount}}
                 {{eventsPointer=y;}}
