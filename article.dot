@@ -1,6 +1,6 @@
 <html>
 <body>
-    <a href="#" onclick="/Admin/Article/Edit?ID={{=it.newArticleId}}">New Article</a>
+    <a href="/Admin/Article/Edit?ID={{=it.newArticleId}}">New Article</a>
     <ul>
         {{~it.articles :event:index}}
 
